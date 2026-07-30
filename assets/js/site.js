@@ -1,0 +1,113 @@
+(() => {
+  "use strict";
+
+  const config = window.RAS_CONFIG || {};
+
+  document.querySelectorAll("[data-config]").forEach((element) => {
+    const key = element.dataset.config;
+    if (Object.prototype.hasOwnProperty.call(config, key) && config[key]) {
+      element.textContent = config[key];
+    }
+  });
+
+  document.querySelectorAll("[data-config-href]").forEach((element) => {
+    const key = element.dataset.configHref;
+    const value = config[key];
+    if (value) {
+      element.setAttribute("href", value);
+      element.hidden = false;
+    } else if (element.hasAttribute("data-optional-link")) {
+      element.hidden = true;
+    }
+  });
+
+  const emailLinks = document.querySelectorAll("[data-email-link]");
+  emailLinks.forEach((link) => {
+    const email = config.teamEmail || "";
+    if (email && !email.startsWith("REPLACE-")) {
+      link.href = `mailto:${email}`;
+      link.textContent = email;
+    } else {
+      link.removeAttribute("href");
+      link.textContent = "Add the current team email before publishing";
+      link.classList.add("needs-edit");
+    }
+  });
+
+  const currentPage = document.body.dataset.page;
+  document.querySelectorAll("[data-nav]").forEach((link) => {
+    if (link.dataset.nav === currentPage) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+
+  const navToggle = document.querySelector("[data-nav-toggle]");
+  const nav = document.querySelector("[data-main-nav]");
+  if (navToggle && nav) {
+    navToggle.addEventListener("click", () => {
+      const open = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("is-open", !open);
+    });
+  }
+
+  const searchEntries = [
+    { title: "Home", url: "index.html", text: "Rose Aerial Systems MeadowHawk mission storm response autonomous VTOL QuadPlane" },
+    { title: "Mission Concept", url: "index.html#mission", text: "VTOL launch autonomous navigation mapping search detection payload delivery return landing" },
+    { title: "Current Aircraft", url: "index.html#aircraft", text: "X-frame quadplane pusher Pixhawk 6X Jetson Orin NX three 6S batteries" },
+    { title: "Engineering Overview", url: "engineering.html", text: "airframe propulsion power avionics autonomy perception payload safety" },
+    { title: "Airframe and Aerodynamics", url: "engineering.html#airframe", text: "fixed wing MH32 structures Y-tail booms landing gear" },
+    { title: "Propulsion and Power", url: "engineering.html#propulsion", text: "lift motors cruise motor batteries PDB ESC power distribution" },
+    { title: "Avionics and Autonomy", url: "engineering.html#avionics", text: "Pixhawk 6X ArduPilot Jetson Orin NX MAVLink Mission Planner ELRS telemetry" },
+    { title: "Perception and Payload", url: "engineering.html#payload", text: "eCon camera computer vision mapping target detection bottle beacon payload drop" },
+    { title: "Testing History", url: "testing.html", text: "MEP SITL flight test yaw incident X-frame proof flight one mile" },
+    { title: "Proof of Flight", url: "testing.html#proof-flight", text: "one-mile autonomous waypoint proof flight approved" },
+    { title: "Team", url: "team.html", text: "members leadership subteams constitution Rose-Hulman sponsors contact" },
+    { title: "Sponsors", url: "team.html#sponsors", text: "partners sponsors support Rose-Hulman" }
+  ];
+
+  const dialog = document.querySelector("[data-search-dialog]");
+  const openButtons = document.querySelectorAll("[data-open-search]");
+  const closeButton = document.querySelector("[data-close-search]");
+  const input = document.querySelector("[data-search-input]");
+  const results = document.querySelector("[data-search-results]");
+
+  function renderResults(query = "") {
+    if (!results) return;
+    const normalized = query.trim().toLowerCase();
+    const matches = searchEntries.filter((entry) =>
+      !normalized || `${entry.title} ${entry.text}`.toLowerCase().includes(normalized)
+    );
+
+    results.innerHTML = matches.length
+      ? matches.map((entry) => `
+          <li>
+            <a href="${entry.url}">
+              <strong>${entry.title}</strong>
+              <span>${entry.text}</span>
+            </a>
+          </li>`).join("")
+      : "<li class=\"search-empty\">No matching section was found.</li>";
+  }
+
+  openButtons.forEach((button) => button.addEventListener("click", () => {
+    if (!dialog) return;
+    renderResults("");
+    dialog.showModal();
+    setTimeout(() => input?.focus(), 0);
+  }));
+
+  closeButton?.addEventListener("click", () => dialog?.close());
+  input?.addEventListener("input", (event) => renderResults(event.target.value));
+
+  dialog?.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && !["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) {
+      event.preventDefault();
+      document.querySelector("[data-open-search]")?.click();
+    }
+  });
+})();
