@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Development and testing history for MeadowHawk and the Rose Aerial Systems SUAS program.">
+  <meta name="theme-color" content="#080808">
+  <title>Testing | Rose Aerial Systems</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="testing">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Rose Aerial Systems home"><img src="assets/img/logo-mark.png" alt="" width="52" height="52"><span class="brand-text"><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-nav-toggle>Menu</button>
+      <nav class="main-nav" id="main-navigation" aria-label="Primary" data-main-nav><a href="index.html" data-nav="home">Home</a><a href="engineering.html" data-nav="engineering">Engineering</a><a href="testing.html" data-nav="testing">Testing</a><a href="team.html" data-nav="team">Team</a><button class="search-button" type="button" data-open-search aria-label="Search this website">Search <span aria-hidden="true">/</span></button></nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Testing</div>
+        <p class="eyebrow">Development and validation</p>
+        <h1>Test, learn, revise, fly again</h1>
+        <p>The team uses simulation, subsystem platforms, bench tests, ground tests, and progressively more demanding flight tests. Problems and corrective actions are recorded because the development history is as important as the final configuration.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="notice"><strong>Editing reminder:</strong> replace the summary entries below with final dates, approved media, flight-log plots, test procedures, and video links before competition submission.</div>
+        <div class="timeline">
+          <article class="timeline-entry">
+            <time datetime="2025">Early program development</time>
+            <h2>Analytical design and major aircraft revisions</h2>
+            <p>The team developed first-order models for wing loading, stall speed, drag, cruise thrust, hover power, and mission energy. eCalc and CAD studies were then used to compare motor, propeller, battery, mass, and geometry choices. MeadowHawk progressed through several major revisions as packaging and weight estimates became more realistic.</p>
+            <div class="timeline-media media-frame"><img src="assets/img/meadowhawk-cad.jpg" alt="Early MeadowHawk CAD configuration" width="1350" height="837" loading="lazy"></div>
+          </article>
+
+          <article class="timeline-entry">
+            <time datetime="2026-01">Parallel subsystem development</time>
+            <h2>Multirotor Experiment Platform</h2>
+            <p>MEP was built to carry the competition flight stack, camera, communications hardware, and modular payload system before MeadowHawk was ready. It supported autopilot tuning, waypoint tests, camera integration, competition-altitude image collection, and payload deployment.</p>
+            <div class="timeline-media media-frame"><img src="assets/img/mep-flight.jpg" alt="Multirotor Experiment Platform during a field test" width="1200" height="677" loading="lazy"></div>
+          </article>
+
+          <article class="timeline-entry">
+            <time datetime="2026-06">Software verification</time>
+            <h2>Software-in-the-loop and ground-station testing</h2>
+            <p>ArduPilot SITL, Gazebo, mission scripts, and Mission Planner were used together to validate network connections, arming states, flight-mode behavior, waypoint handling, and higher-level mission logic before enabling equivalent behavior on the physical aircraft.</p>
+            <div class="timeline-media media-frame tall"><img src="assets/img/sitl-test.jpg" alt="Student operating a Gazebo and Mission Planner SITL test environment" width="900" height="1585" loading="lazy"></div>
+          </article>
+
+          <article class="timeline-entry">
+            <time datetime="2026-07-20">July 2026</time>
+            <h2>Initial VTOL problem and corrective action</h2>
+            <p>An early MeadowHawk VTOL test produced a persistent yaw rotation and uneven motor heating, and one lift motor was damaged. The team reviewed motor mapping, direction, frame configuration, structural stiffness, control behavior, and the flight logs. The lift arrangement was changed from an H-frame interpretation to an X-frame configuration, the arm and motor-pod structure was reinforced, and the propulsion setup was rechecked before further flight.</p>
+            <div class="callout"><h3>Engineering outcome</h3><p>The follow-on hover and assisted-mode tests showed that the yaw problem had been resolved. The incident is retained in the public history because it directly influenced the final configuration and testing process.</p></div>
+          </article>
+
+          <article class="timeline-entry" id="proof-flight">
+            <time datetime="2026-07-25">25 July 2026</time>
+            <h2>Approved one-mile proof-of-flight mission</h2>
+            <p>MeadowHawk completed six approximately 900-foot waypoint laps for a total distance exceeding one mile. The demonstration used the X-frame lift configuration and four DJI 4216 KV310 lift motors. The proof video and supporting flight data were accepted by the competition reviewers.</p>
+            <ul class="check-list">
+              <li>Autonomous waypoint circuit completed</li>
+              <li>Required ground-station information displayed</li>
+              <li>Battery performance aligned with previous planning</li>
+              <li>Post-flight logs and parameters retained for review</li>
+            </ul>
+            <div class="button-row">
+              <a class="button dark" href="#" data-config-href="proofFlightUrl" data-optional-link hidden>Watch proof-of-flight video</a>
+              <a class="button dark" href="#" data-config-href="technicalReportUrl" data-optional-link hidden>Read technical report</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" aria-labelledby="future-tests-title">
+      <div class="container">
+        <div class="section-heading"><span class="kicker">Next validation</span><h2 id="future-tests-title">Competition-readiness testing</h2><p>Replace this planning list with completed, dated entries as testing progresses.</p></div>
+        <div class="grid three">
+          <article class="card"><h3>Transition and cruise</h3><p>Incremental VTOL-to-fixed-wing transition, cruise tuning, return transition, and landing with energy and control-margin review.</p></article>
+          <article class="card"><h3>Mission systems</h3><p>End-to-end mapping, target detection, geolocation, payload selection, drop navigation, and release verification.</p></article>
+          <article class="card"><h3>Reliability and operations</h3><p>Repeated assembly, preflight, communications, failsafe, battery, transport, and full-mission rehearsals under field conditions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container callout">
+        <span class="kicker">Add a new test</span>
+        <h2>Recommended format for future entries</h2>
+        <p><strong>Date → objective → aircraft configuration → procedure → acceptance criteria → results → evidence → corrective action → next test.</strong> Copy one of the timeline entries in <code>testing.html</code>, replace its content, and add approved images to <code>assets/img/</code>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div><div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="engineering.html">Engineering</a><a href="team.html">Team</a><a href="https://robonation.gitbook.io/suas-resources/2026-team-handbook/section-2-design-documentation/2.4-team-website">SUAS website requirements</a></div><div class="footer-links"><h2>Contact</h2><a data-email-link>Add the current team email before publishing</a><a href="#" data-config-href="githubUrl" data-optional-link hidden>GitHub</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div></div><div class="footer-bottom">Last updated <span data-config="lastUpdated">July 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div></div>
+  </footer>
+
+  <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title"><div class="search-header"><label id="search-title" for="site-search"><strong>Search this website</strong></label><input id="site-search" type="search" placeholder="Try “payload,” “SITL,” or “Pixhawk”" data-search-input><button class="search-close" type="button" data-close-search aria-label="Close search">×</button></div><ul class="search-results" data-search-results></ul></dialog>
+</body>
+</html>

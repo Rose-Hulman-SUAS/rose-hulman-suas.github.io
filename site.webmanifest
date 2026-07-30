@@ -1,0 +1,12 @@
+{
+  "name": "Rose Aerial Systems",
+  "short_name": "RAS",
+  "description": "Rose Aerial Systems SUAS team website",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#800000",
+  "icons": [
+    {"src": "assets/img/favicon.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}

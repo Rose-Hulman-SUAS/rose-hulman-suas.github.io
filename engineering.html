@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Engineering overview of MeadowHawk, Rose Aerial Systems' SUAS 2026 QuadPlane aircraft.">
+  <meta name="theme-color" content="#080808">
+  <title>Engineering | Rose Aerial Systems</title>
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="engineering">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Rose Aerial Systems home">
+        <img src="assets/img/logo-mark.png" alt="" width="52" height="52">
+        <span class="brand-text"><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-nav-toggle>Menu</button>
+      <nav class="main-nav" id="main-navigation" aria-label="Primary" data-main-nav>
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="engineering.html" data-nav="engineering">Engineering</a>
+        <a href="testing.html" data-nav="testing">Testing</a>
+        <a href="team.html" data-nav="team">Team</a>
+        <button class="search-button" type="button" data-open-search aria-label="Search this website">Search <span aria-hidden="true">/</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> / Engineering</div>
+        <p class="eyebrow">Vehicle design documentation</p>
+        <h1>Engineering MeadowHawk</h1>
+        <p>MeadowHawk is a systems-engineering project: airframe, propulsion, electrical power, flight control, autonomy, communications, perception, payload delivery, and ground operations must work together as one reliable aircraft.</p>
+      </div>
+    </section>
+
+    <nav class="subnav" aria-label="Engineering sections">
+      <div class="container">
+        <a href="#overview">Overview</a>
+        <a href="#airframe">Airframe</a>
+        <a href="#propulsion">Propulsion and power</a>
+        <a href="#avionics">Avionics and autonomy</a>
+        <a href="#payload">Perception and payload</a>
+        <a href="#safety">Safety</a>
+      </div>
+    </nav>
+
+    <section class="section" id="overview" aria-labelledby="overview-title">
+      <div class="container split">
+        <div>
+          <span class="kicker">Architecture</span>
+          <h2 id="overview-title">A QuadPlane selected for flexible deployment</h2>
+          <p>Four vertical lift motors provide takeoff, hover, and landing capability. A separate rear-mounted motor provides forward thrust in fixed-wing flight. This arrangement avoids dependence on a runway while offering better cruise efficiency than a pure multirotor.</p>
+          <p>The system is organized around a Pixhawk 6X flight controller, an NVIDIA Jetson Orin NX companion computer, redundant communications links, a downward-facing camera, and a modular payload bay near the aircraft center of gravity.</p>
+          <ul class="check-list">
+            <li>Reliable vertical takeoff and landing</li>
+            <li>Efficient fixed-wing cruise</li>
+            <li>Autonomous waypoint and search operations</li>
+            <li>Manual takeover and independent telemetry</li>
+            <li>Target detection and relief-payload delivery</li>
+          </ul>
+        </div>
+        <figure>
+          <div class="media-frame"><img src="assets/img/meadowhawk-cad.jpg" alt="CAD rendering of the MeadowHawk QuadPlane configuration" width="1350" height="837"></div>
+          <figcaption class="caption">A design-stage CAD rendering of MeadowHawk. Hardware configuration has continued to evolve through flight testing.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section dark" id="airframe" aria-labelledby="airframe-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Subsystem 01</span>
+          <h2 id="airframe-title">Airframe and aerodynamics</h2>
+          <p>The fixed-wing platform carries the weight of the lift system, batteries, avionics, companion computer, camera, and payload while remaining practical to manufacture, transport, assemble, and repair.</p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h3>Wing and cruise design</h3>
+            <p>The team used first-order wing loading, stall-speed, drag, and energy calculations before comparing propulsion and endurance choices in eCalc.</p>
+          </article>
+          <article class="card">
+            <h3>VTOL integration</h3>
+            <p>Four lift motors are mounted around the aircraft center of gravity. The current test configuration uses an X-frame geometry following early flight-test corrections.</p>
+          </article>
+          <article class="card">
+            <h3>Design for manufacture</h3>
+            <p>The structure was divided into manufacturable assemblies and revised as mass estimates, subsystem packaging, wiring, and structural loads became better understood.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="propulsion" aria-labelledby="propulsion-title">
+      <div class="container split">
+        <figure>
+          <div class="media-frame"><img src="assets/img/systems-integration-cad.jpg" alt="CAD view of the MeadowHawk center section showing avionics and payload integration" width="1035" height="482" loading="lazy"></div>
+          <figcaption class="caption">Center-section packaging was developed around access, center of gravity, cooling, wiring, and payload integration.</figcaption>
+        </figure>
+        <div>
+          <span class="kicker">Subsystem 02</span>
+          <h2 id="propulsion-title">Propulsion and electrical power</h2>
+          <p>The lift and cruise systems have different operating requirements. Lift propulsion must provide controllable thrust margin at low airspeed, while the cruise system is selected around fixed-wing thrust, propeller pitch speed, current draw, and endurance.</p>
+          <ul class="check-list">
+            <li>Three 6S 4500 mAh batteries operate as a combined power system.</li>
+            <li>A high-current power distribution board supplies four lift ESCs and the cruise ESC.</li>
+            <li>The approved one-mile proof flight used four DJI 4216 KV310 lift motors.</li>
+            <li>Battery and propulsion choices are evaluated with analytical estimates, eCalc, bench testing, and flight logs.</li>
+          </ul>
+          <p><strong>Configuration note:</strong> the final competition motor and propeller combination should be updated here after the team freezes the competition configuration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="avionics" aria-labelledby="avionics-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Subsystem 03</span>
+          <h2 id="avionics-title">Avionics, autonomy, and communications</h2>
+          <p>The Pixhawk handles flight stabilization and low-level control. The Jetson executes higher-level mission and perception software, communicating with the autopilot through MAVLink.</p>
+        </div>
+        <div class="grid two">
+          <article class="card">
+            <h3>Flight control</h3>
+            <p>ArduPlane QuadPlane firmware provides VTOL modes, autonomous missions, guided navigation, return-to-launch behavior, and safety failsafes. Mission Planner is used for configuration, mission planning, telemetry, and log review.</p>
+          </article>
+          <article class="card">
+            <h3>Companion computer</h3>
+            <p>The NVIDIA Jetson Orin NX runs higher-level C++ and Python software, coordinates mission states, receives vehicle telemetry, and supports computer-vision processing.</p>
+          </article>
+          <article class="card">
+            <h3>Control and telemetry</h3>
+            <p>ExpressLRS provides the safety pilot's manual takeover link and telemetry capability. A separate 915 MHz telemetry radio supplies a dedicated ground-station connection.</p>
+          </article>
+          <article class="card">
+            <h3>Simulation</h3>
+            <p>Software-in-the-loop testing with ArduPilot, Gazebo, and Mission Planner allows the team to test mission logic, network connections, arming behavior, and waypoint navigation before physical flight.</p>
+          </article>
+        </div>
+        <figure style="margin: 2rem 0 0;">
+          <div class="media-frame"><img src="assets/img/software-architecture.png" alt="Diagram showing the MeadowHawk software architecture from Pixhawk and Jetson hardware to flight control, mission logic, detection, navigation, and payload deployment" width="1200" height="2051" loading="lazy"></div>
+          <figcaption class="caption" style="color:#bdbdbd;">Software architecture from flight-control hardware through mission logic, perception, navigation, and payload deployment.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="payload" aria-labelledby="payload-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Subsystem 04</span>
+          <h2 id="payload-title">Perception, mapping, and payload delivery</h2>
+          <p>The mission system must identify relevant targets, estimate their locations, and deliver the correct relief object without destabilizing the aircraft.</p>
+        </div>
+        <div class="grid two">
+          <article class="card">
+            <figure class="media-frame"><img src="assets/img/detection-demo.jpg" alt="Computer vision detection demonstration in the Rose Aerial Systems workspace" width="1400" height="819" loading="lazy"></figure>
+            <h3>Camera and detection</h3>
+            <p>The e-Con eCam25 CONUX camera and Jetson companion computer support aerial image collection and object detection. Training and validation data include tent and mannequin targets under varied altitude, lighting, motion, and background conditions.</p>
+          </article>
+          <article class="card">
+            <figure class="media-frame"><img src="assets/img/payload-cad.jpg" alt="CAD rendering of the modular MeadowHawk payload bay" width="1200" height="878" loading="lazy"></figure>
+            <h3>Modular payload bay</h3>
+            <p>The payload mechanism is placed near the center of gravity so that loading and release have a limited effect on trim. The system is designed to deploy the competition relief objects under autonomous command.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="safety" aria-labelledby="safety-title">
+      <div class="container callout">
+        <span class="kicker">Safety and verification</span>
+        <h2 id="safety-title">No single analysis method is treated as sufficient</h2>
+        <p>The team combines conservative calculations, simulation, component testing, staged ground tests, MEP flights, MeadowHawk flights, telemetry review, and configuration control. Manual takeover, return modes, geofencing, flight-mode selection, and preflight procedures are treated as part of the aircraft design rather than as afterthoughts.</p>
+        <a class="button dark" href="testing.html">See the testing record</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div>
+        <div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="testing.html">Testing</a><a href="team.html">Team</a><a href="https://robonation.gitbook.io/suas-resources/2026-team-handbook/section-2-design-documentation/2.4-team-website">SUAS website requirements</a></div>
+        <div class="footer-links"><h2>Contact</h2><a data-email-link>Add the current team email before publishing</a><a href="#" data-config-href="githubUrl" data-optional-link hidden>GitHub</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div>
+      </div>
+      <div class="footer-bottom">Last updated <span data-config="lastUpdated">July 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div>
+    </div>
+  </footer>
+
+  <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title">
+    <div class="search-header"><label id="search-title" for="site-search"><strong>Search this website</strong></label><input id="site-search" type="search" placeholder="Try “payload,” “SITL,” or “Pixhawk”" data-search-input><button class="search-close" type="button" data-close-search aria-label="Close search">×</button></div>
+    <ul class="search-results" data-search-results></ul>
+  </dialog>
+</body>
+</html>
