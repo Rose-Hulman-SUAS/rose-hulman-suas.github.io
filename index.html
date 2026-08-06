@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rose Aerial Systems and MeadowHawk, Rose-Hulman's autonomous VTOL aircraft for the 2026 Student Unmanned Aerial Systems Competition.">
+  <meta name="description" content="Rose Aerial Systems is building MeadowHawk, a student-designed VTOL aircraft for the 2026 Student Unmanned Aerial Systems Competition.">
   <meta name="theme-color" content="#080808">
   <title>Rose Aerial Systems | MeadowHawk</title>
   <link rel="icon" href="assets/img/favicon.png">
@@ -41,7 +41,7 @@
         <div class="hero-copy">
           <p class="eyebrow">SUAS <span data-config="season">2025-2026</span> Competition Vehicle</p>
           <h1 id="hero-title">Meadow<span class="accent">Hawk</span></h1>
-          <p class="hero-lede">A student-designed autonomous QuadPlane built by Rose Aerial Systems for rapid storm-response mapping, detection, and payload delivery.</p>
+          <p class="hero-lede">We are building MeadowHawk, a five-motor QuadPlane for the 2026 SUAS Competition. It is designed to take off vertically, search an assigned area, and deliver relief payloads.</p>
           <div class="hero-actions">
             <a class="button" href="engineering.html">Explore the aircraft</a>
             <a class="button secondary" href="testing.html#proof-flight">View flight testing</a>
@@ -50,7 +50,7 @@
         </div>
         <div class="hero-art">
           <img src="assets/img/aircraft-wireframe.png" alt="CAD wireframe view of the MeadowHawk VTOL fixed-wing aircraft" width="1455" height="1107">
-          <div class="hero-badge"><strong>Proof-flight milestone:</strong> the team completed its approved one-mile waypoint demonstration in July 2026.</div>
+          <div class="hero-badge"><strong>Proof-flight milestone:</strong> on July 25, MeadowHawk flew six autonomous VTOL waypoint laps totaling more than one mile.</div>
         </div>
       </div>
     </section>
@@ -58,19 +58,19 @@
     <section class="section compact" id="aircraft" aria-labelledby="aircraft-title">
       <div class="container">
         <div class="section-heading">
-          <span class="kicker">Current aircraft</span>
-          <h2 id="aircraft-title">Fixed-wing efficiency with vertical takeoff and landing</h2>
-          <p>MeadowHawk combines four vertical lift motors with a rear-mounted cruise motor. The architecture is intended to launch without a runway, transition to efficient forward flight, search an assigned area, deploy relief payloads, and return for a vertical landing.</p>
+          <span class="kicker">Vehicle overview</span>
+          <h2 id="aircraft-title">A fixed wing that can take off vertically</h2>
+          <p>Four motors handle vertical takeoff, hover, and landing. A fifth motor at the rear provides cruise thrust. This gives us runway-independent operation without giving up the endurance of a fixed-wing aircraft.</p>
         </div>
         <dl class="spec-grid">
-          <div class="spec"><dt>Configuration</dt><dd>QuadPlane pusher</dd></div>
-          <div class="spec"><dt>Lift geometry</dt><dd>X-frame, four motors</dd></div>
-          <div class="spec"><dt>As-tested mass</dt><dd data-config="currentWeight">Approximately 22 lb as tested</dd></div>
-          <div class="spec"><dt>Energy system</dt><dd>Three 6S 4500 mAh packs</dd></div>
+          <div class="spec"><dt>Configuration</dt><dd>QuadPlane with rear pusher</dd></div>
+          <div class="spec"><dt>Lift arrangement</dt><dd>H-shaped structure; X-frame control allocation</dd></div>
+          <div class="spec"><dt>TDR design condition</dt><dd data-config="designWeight">Approximately 19 lb</dd></div>
+          <div class="spec"><dt>Energy system</dt><dd>Three parallel 6S 4500 mAh packs</dd></div>
           <div class="spec"><dt>Flight controller</dt><dd>Pixhawk 6X</dd></div>
           <div class="spec"><dt>Companion computer</dt><dd>NVIDIA Jetson Orin NX</dd></div>
           <div class="spec"><dt>Ground station</dt><dd>Mission Planner</dd></div>
-          <div class="spec"><dt>Primary mission</dt><dd>Search, detect, and deliver</dd></div>
+          <div class="spec"><dt>Mission</dt><dd>Search and relief delivery</dd></div>
         </dl>
       </div>
     </section>
@@ -78,9 +78,9 @@
     <section class="section dark" id="mission" aria-labelledby="mission-title">
       <div class="container">
         <div class="section-heading">
-          <span class="kicker">Mission concept</span>
-          <h2 id="mission-title">One aircraft, six linked mission phases</h2>
-          <p>The aircraft, autonomy stack, payload system, and ground station are designed as one integrated system rather than as independent demonstrations.</p>
+          <span class="kicker">Competition mission</span>
+          <h2 id="mission-title">From takeoff to delivery</h2>
+          <p>The mission connects the aircraft, flight software, camera, payload system, and ground station. Each step depends on the one before it.</p>
         </div>
         <div class="mission-flow" aria-label="MeadowHawk mission sequence">
           <div class="mission-step"><strong>Vertical takeoff</strong></div>
@@ -97,25 +97,25 @@
       <div class="container">
         <div class="section-heading">
           <span class="kicker">System overview</span>
-          <h2 id="systems-title">Designed across disciplines</h2>
-          <p>The website is intentionally compact, but each area below summarizes a major part of the vehicle and links to the supporting engineering record.</p>
+          <h2 id="systems-title">How MeadowHawk comes together</h2>
+          <p>MeadowHawk is one aircraft, but building it takes several kinds of engineering. These sections show how the major systems fit together.</p>
         </div>
         <div class="grid four">
           <article class="card">
             <a class="stretched" href="engineering.html#airframe"><div class="card-icon"></div><h3>Airframe</h3></a>
-            <p>Fixed-wing aerodynamics, structures, VTOL booms, landing gear, and transport considerations.</p>
+            <p>The wing, fuselage, tail, lift booms, and landing gear have to be light enough to fly and sturdy enough for field use.</p>
           </article>
           <article class="card">
             <a class="stretched" href="engineering.html#propulsion"><div class="card-icon"></div><h3>Propulsion</h3></a>
-            <p>Separate lift and cruise propulsion systems, high-current power distribution, and battery integration.</p>
+            <p>Separate lift and cruise motors share the battery system but serve different parts of the flight.</p>
           </article>
           <article class="card">
             <a class="stretched" href="engineering.html#avionics"><div class="card-icon"></div><h3>Autonomy</h3></a>
-            <p>ArduPilot flight control, companion-computer mission logic, telemetry, and manual takeover.</p>
+            <p>ArduPilot flies the aircraft while the companion computer handles higher-level mission tasks.</p>
           </article>
           <article class="card">
             <a class="stretched" href="engineering.html#payload"><div class="card-icon"></div><h3>Mission systems</h3></a>
-            <p>Computer vision, mapping, target localization, and modular relief-payload deployment.</p>
+            <p>The camera, mapping software, target-location tools, and payload bay support the search-and-delivery mission.</p>
           </article>
         </div>
       </div>
@@ -128,13 +128,13 @@
         </div>
         <div>
           <span class="kicker">Risk reduction</span>
-          <h2 id="evidence-title">Testing critical systems before the full aircraft was ready</h2>
-          <p>The team built a Multirotor Experiment Platform (MEP) to test the Pixhawk and Jetson flight stack, camera, detection software, communications, and modular payload mechanism while MeadowHawk was still being manufactured and revised.</p>
+          <h2 id="evidence-title">MEP let us test hardware before MeadowHawk flew</h2>
+          <p>While MeadowHawk was still being built, we used the Multirotor Experiment Platform (MEP) to fly the Pixhawk and Jetson, collect camera data, test communications, and work on the payload mechanism.</p>
           <ul class="check-list">
             <li>Competition-altitude image collection</li>
-            <li>Payload-drop and deployment testing</li>
-            <li>Autonomous flight-mode and waypoint testing</li>
-            <li>Early integration of the camera and companion computer</li>
+            <li>Payload release and deployment tests</li>
+            <li>Autonomous flight modes and waypoint missions</li>
+            <li>Camera and companion-computer integration</li>
           </ul>
           <a class="button dark" href="testing.html">Read the testing history</a>
         </div>
@@ -145,8 +145,8 @@
       <div class="container split">
         <div>
           <span class="kicker">Rose Aerial Systems</span>
-          <h2 id="team-cta-title">Students building autonomous flight systems at Rose-Hulman</h2>
-          <p>RAS brings together aircraft design, manufacturing, embedded systems, controls, communications, software, computer vision, operations, and safety under one competition program.</p>
+          <h2 id="team-cta-title">Built by students across Rose-Hulman</h2>
+          <p>Our team includes students working in aircraft design, manufacturing, electronics, controls, software, computer vision, testing, and flight operations.</p>
         </div>
         <div class="button-row">
           <a class="button light" href="team.html">Meet the team</a>
@@ -172,7 +172,7 @@
         </div>
         <div class="footer-links">
           <h2>Contact</h2>
-          <a data-email-link>Add the current team email before publishing</a>
+          <a data-email-link>Team email coming soon</a>
           <a href="#" data-config-href="githubUrl" data-optional-link hidden>GitHub</a>
           <a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a>
           <a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a>

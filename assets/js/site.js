@@ -29,7 +29,7 @@
       link.textContent = email;
     } else {
       link.removeAttribute("href");
-      link.textContent = "Add the current team email before publishing";
+      link.textContent = "Team email coming soon";
       link.classList.add("needs-edit");
     }
   });
@@ -53,8 +53,8 @@
 
   const searchEntries = [
     { title: "Home", url: "index.html", text: "Rose Aerial Systems MeadowHawk mission storm response autonomous VTOL QuadPlane" },
-    { title: "Mission Concept", url: "index.html#mission", text: "VTOL launch autonomous navigation mapping search detection payload delivery return landing" },
-    { title: "Current Aircraft", url: "index.html#aircraft", text: "X-frame quadplane pusher Pixhawk 6X Jetson Orin NX three 6S batteries" },
+    { title: "Competition Mission", url: "index.html#mission", text: "VTOL launch autonomous navigation mapping search detection payload delivery return landing" },
+    { title: "Vehicle Overview", url: "index.html#aircraft", text: "QuadPlane pusher H-shaped lift structure X-frame control allocation 19 lb design condition Pixhawk Jetson three 6S batteries" },
     { title: "Engineering Overview", url: "engineering.html", text: "airframe propulsion power avionics autonomy perception payload safety" },
     { title: "Airframe and Aerodynamics", url: "engineering.html#airframe", text: "fixed wing MH32 structures Y-tail booms landing gear" },
     { title: "Propulsion and Power", url: "engineering.html#propulsion", text: "lift motors cruise motor batteries PDB ESC power distribution" },
