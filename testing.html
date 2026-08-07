@@ -16,7 +16,7 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Rose Aerial Systems home"><img src="assets/img/logo-mark.png" alt="" width="52" height="52"><span class="brand-text"><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></span></a>
+      <a class="brand" href="index.html" aria-label="Rose Aerial Systems home"><img src="assets/img/logo-mark.png" alt="" width="52" height="49"><span class="brand-text"><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-nav-toggle>Menu</button>
       <nav class="main-nav" id="main-navigation" aria-label="Primary" data-main-nav><a href="index.html" data-nav="home">Home</a><a href="engineering.html" data-nav="engineering">Engineering</a><a href="testing.html" data-nav="testing">Testing</a><a href="team.html" data-nav="team">About</a><button class="search-button" type="button" data-open-search aria-label="Search this website" aria-keyshortcuts="/" title="Search this website (press /)">Search</button></nav>
     </div>
@@ -24,11 +24,17 @@
 
   <main id="main-content">
     <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Testing</div>
-        <p class="eyebrow">Development history</p>
-        <h1>From bench tests to proof flight</h1>
-        <p>We do not jump from CAD to a full mission. New systems start in simulation or on the bench, move to MEP, and then reach MeadowHawk through short, staged flight tests. When something goes wrong, we record what happened and what changed.</p>
+      <div class="container page-hero-layout">
+        <div class="page-hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Testing</span></nav>
+          <p class="eyebrow">Development history</p>
+          <h1>From bench tests to proof flight</h1>
+          <p>We do not jump from CAD to a full mission. New systems start in simulation or on the bench, move to MEP, and then reach MeadowHawk through short, staged flight tests. When something goes wrong, we record what happened and what changed.</p>
+        </div>
+        <figure class="page-hero-media">
+          <img src="assets/img/meadowhawk-vtol-flight.jpg" alt="MeadowHawk airborne above a tree line during VTOL flight testing" width="800" height="670" fetchpriority="high">
+          <figcaption>MeadowHawk during VTOL flight testing. Dated results below remain tied to their individual test records.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -42,11 +48,17 @@
             <div class="timeline-media media-frame"><img src="assets/img/meadowhawk-cad.jpg" alt="Early MeadowHawk CAD configuration" width="1350" height="837" loading="lazy"></div>
           </article>
 
-          <article class="timeline-entry">
+          <article class="timeline-entry" id="mep">
             <time datetime="2026-01">Parallel subsystem development</time>
             <h2>Multirotor Experiment Platform</h2>
             <p>Before MeadowHawk was ready, MEP carried the Pixhawk, Jetson, camera, communications hardware, and payload equipment. We used it for waypoint work, camera integration, competition-altitude image collection, and payload releases. These flights reduced integration risk, but they did not prove that the same systems were ready on MeadowHawk.</p>
             <div class="timeline-media media-frame"><img src="assets/img/mep-flight.jpg" alt="Multirotor Experiment Platform during a field test" width="1200" height="677" loading="lazy"></div>
+            <figure class="video-card">
+              <div class="video-embed">
+                <iframe src="https://www.youtube-nocookie.com/embed/kuHBPhvw5UI" title="MEP2 autonomous takeoff and payload-drop flight test" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <figcaption>MEP2 flight test showing autonomous takeoff and a commanded payload release. It reduced payload-integration risk before MeadowHawk installation; it was not a complete MeadowHawk search-and-delivery mission.</figcaption>
+            </figure>
           </article>
 
           <article class="timeline-entry">
@@ -75,6 +87,12 @@
               <li>No manual takeover needed to finish the mission</li>
             </ul>
             <div class="callout"><h3>What this flight did not prove</h3><p>The proof flight did not include fixed-wing transition, mapping, live target detection, geolocation, payload delivery on MeadowHawk, or the complete competition mission.</p></div>
+            <figure class="video-card">
+              <div class="video-embed">
+                <iframe src="https://www.youtube-nocookie.com/embed/hljpZ0iLWb4" title="Accepted MeadowHawk proof flight from July 21, 2026" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <figcaption>Accepted MeadowHawk proof-flight video from July 21, 2026. The flight covered autonomous VTOL waypoint laps; it did not include fixed-wing transition or the complete search-and-delivery mission.</figcaption>
+            </figure>
             <div class="button-row">
               <a class="button dark" href="#" data-config-href="proofFlightUrl" data-optional-link hidden>Watch proof-of-flight video</a>
               <a class="button dark" href="#" data-config-href="technicalReportUrl" data-optional-link hidden>Read technical report</a>
@@ -105,9 +123,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div><div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="engineering.html">Engineering</a><a href="team.html">About</a><a href="https://robonation.gitbook.io/suas-resources/2026-team-handbook/section-2-design-documentation/2.4-team-website">SUAS website requirements</a></div><div class="footer-links"><h2>Contact</h2><a href="mailto:rhitsuas@gmail.com" data-email-link>rhitsuas@gmail.com</a><a href="#" data-config-href="youtubeUrl" data-optional-link hidden>YouTube</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div></div><div class="footer-bottom">Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div></div>
+    <div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div><div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="engineering.html">Engineering</a><a href="team.html">About</a></div><div class="footer-links"><h2>Contact</h2><a href="mailto:rhitsuas@gmail.com" data-email-link>rhitsuas@gmail.com</a><a href="#" data-config-href="youtubeUrl" data-optional-link hidden>YouTube</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div></div><div class="footer-bottom">Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div></div>
   </footer>
 
-  <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title"><div class="search-header"><label id="search-title" for="site-search"><strong>Search this website</strong></label><input id="site-search" type="search" placeholder="Try “payload,” “SITL,” or “Pixhawk”" data-search-input><button class="search-close" type="button" data-close-search aria-label="Close search">×</button></div><ul class="search-results" data-search-results></ul></dialog>
+  <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title"><div class="search-header"><label id="search-title" for="site-search"><strong>Search this website</strong></label><input id="site-search" type="search" placeholder="Try payload, SITL, or Pixhawk" data-search-input><button class="search-close" type="button" data-close-search aria-label="Close search">&times;</button></div><ul class="search-results" data-search-results></ul></dialog>
 </body>
 </html>

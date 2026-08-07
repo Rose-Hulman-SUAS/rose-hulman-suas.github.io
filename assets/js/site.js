@@ -67,9 +67,10 @@
     { title: "Communications and Ground Station", url: "engineering.html#communications", text: "safety pilot ELRS telemetry Mission Planner ground control station" },
     { title: "Payload System", url: "engineering.html#payload", text: "bottle beacon payload delivery mechanical release test" },
     { title: "Testing History", url: "testing.html", text: "MEP SITL flight test yaw incident X-frame proof flight one mile" },
-    { title: "Proof of Flight", url: "testing.html#proof-flight", text: "one-mile autonomous waypoint proof flight approved" },
+    { title: "MEP Payload-Drop Test", url: "testing.html#mep", text: "Multirotor Experiment Platform autonomous takeoff commanded payload release video" },
+    { title: "Proof of Flight", url: "testing.html#proof-flight", text: "July 21 one-mile autonomous VTOL waypoint proof flight approved video" },
     { title: "About Rose Aerial Systems", url: "team.html", text: "student organization competition team aircraft projects members subteams Rose-Hulman" },
-    { title: "Join and Follow", url: "team.html#contact", text: "CampusGroups Discord YouTube Instagram LinkedIn membership contact" },
+    { title: "Join and Follow", url: "team.html#contact", text: "Discord YouTube Instagram LinkedIn email membership contact" },
     { title: "Sponsors", url: "team.html#sponsors", text: "partners sponsors support Rose-Hulman" }
   ];
 

@@ -8,4 +8,6 @@ The initial website package uses images extracted from design files supplied by 
 
 The package does not include third-party stock images or externally downloaded fonts.
 
+Additional team and aircraft photographs were supplied directly by Rose Aerial Systems.
+
 Before public release, confirm that the organization has permission to publish all team, sponsor, institute, and competition marks used on the final site.

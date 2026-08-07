@@ -18,7 +18,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Rose Aerial Systems home">
-        <img src="assets/img/logo-mark.png" alt="" width="52" height="52">
+        <img src="assets/img/logo-mark.png" alt="" width="52" height="49">
         <span class="brand-text">
           <strong>Rose Aerial Systems</strong>
           <span>Rose-Hulman Institute of Technology</span>
@@ -46,7 +46,7 @@
             <a class="button" href="engineering.html">Explore the aircraft</a>
             <a class="button secondary" href="testing.html#proof-flight">View flight testing</a>
           </div>
-          <p class="hero-proof"><strong>Proof flight · July 21, 2026</strong> MeadowHawk flew six autonomous VTOL waypoint laps totaling more than one mile. <a href="#" data-config-href="proofFlightUrl" data-optional-link hidden>Watch the video.</a></p>
+          <p class="hero-proof"><strong>Proof flight - July 21, 2026</strong> MeadowHawk flew six autonomous VTOL waypoint laps totaling more than one mile. <a href="#" data-config-href="proofFlightUrl" data-optional-link hidden>Watch the video.</a></p>
         </div>
         <div class="hero-art">
           <img src="assets/img/aircraft-wireframe.png" alt="CAD wireframe view of the MeadowHawk VTOL fixed-wing aircraft" width="1455" height="1107">
@@ -81,14 +81,10 @@
           <h2 id="mission-title">From takeoff to delivery</h2>
           <p>The planned competition mission ties together autonomous flight, a camera search, target location, and payload delivery, with the ground station and safety pilot supervising the aircraft.</p>
         </div>
-        <div class="mission-flow" aria-label="MeadowHawk mission sequence">
-          <div class="mission-step"><strong>Vertical takeoff</strong></div>
-          <div class="mission-step"><strong>Autonomous navigation</strong></div>
-          <div class="mission-step"><strong>Search and mapping</strong></div>
-          <div class="mission-step"><strong>Target detection</strong></div>
-          <div class="mission-step"><strong>Payload delivery</strong></div>
-          <div class="mission-step"><strong>Return and landing</strong></div>
-        </div>
+        <figure class="conops-figure">
+          <img src="assets/img/mission-conops.png" alt="Planned mission sequence: VTOL takeoff and transition, waypoints, mapping and search, detection and delivery, then return home and vertical landing" width="1399" height="137" loading="lazy">
+          <figcaption><strong>Planned mission concept.</strong> This poster-board sequence describes the intended competition mission. It is not a record of a completed end-to-end flight.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -157,7 +153,7 @@
         </div>
         <div class="button-row">
           <a class="button light" href="team.html">Meet the team</a>
-          <a class="button secondary" href="mailto:rhitsuas@gmail.com?subject=Rose%20Aerial%20Systems%20sponsorship%20inquiry" data-email-link data-email-label="Sponsor the team" data-email-subject="sponsorshipSubject">Sponsor the team</a>
+          <a class="button secondary" href="mailto:rhitsuas@gmail.com?subject=Rose%20Aerial%20Systems%20sponsorship%20inquiry" data-email-link data-email-label="Sponsor the Team by Emailing Us" data-email-subject="sponsorshipSubject">Sponsor the Team by Emailing Us</a>
         </div>
       </div>
     </section>
@@ -175,7 +171,6 @@
           <a href="engineering.html">Engineering</a>
           <a href="testing.html">Testing</a>
           <a href="team.html">About</a>
-          <a href="https://robonation.gitbook.io/suas-resources/2026-team-handbook/section-2-design-documentation/2.4-team-website">SUAS website requirements</a>
         </div>
         <div class="footer-links">
           <h2>Contact</h2>
@@ -193,8 +188,8 @@
   <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title">
     <div class="search-header">
       <label id="search-title" for="site-search"><strong>Search this website</strong></label>
-      <input id="site-search" type="search" placeholder="Try “payload,” “SITL,” or “Pixhawk”" data-search-input>
-      <button class="search-close" type="button" data-close-search aria-label="Close search">×</button>
+      <input id="site-search" type="search" placeholder="Try payload, SITL, or Pixhawk" data-search-input>
+      <button class="search-close" type="button" data-close-search aria-label="Close search">&times;</button>
     </div>
     <ul class="search-results" data-search-results></ul>
   </dialog>

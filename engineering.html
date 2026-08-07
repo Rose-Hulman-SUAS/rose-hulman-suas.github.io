@@ -17,7 +17,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Rose Aerial Systems home">
-        <img src="assets/img/logo-mark.png" alt="" width="52" height="52">
+        <img src="assets/img/logo-mark.png" alt="" width="52" height="49">
         <span class="brand-text"><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-nav-toggle>Menu</button>
@@ -33,11 +33,17 @@
 
   <main id="main-content">
     <section class="page-hero">
-      <div class="container">
-        <div class="breadcrumb"><a href="index.html">Home</a> / Engineering</div>
-        <p class="eyebrow">Vehicle design documentation</p>
-        <h1>Engineering MeadowHawk</h1>
-        <p>MeadowHawk has to do more than fly. Its structure, power system, flight controller, mission computer, camera, payload bay, and ground station all have to work together and still leave the safety pilot a reliable way to take over.</p>
+      <div class="container page-hero-layout">
+        <div class="page-hero-copy">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Engineering</span></nav>
+          <p class="eyebrow">Vehicle design documentation</p>
+          <h1>Engineering MeadowHawk</h1>
+          <p>MeadowHawk has to do more than fly. Its structure, power system, flight controller, mission computer, camera, payload bay, and ground station all have to work together and still leave the safety pilot a reliable way to take over.</p>
+        </div>
+        <figure class="page-hero-media">
+          <img src="assets/img/meadowhawk-workshop-overview.jpg" alt="MeadowHawk assembled across workshop tables during systems integration" width="1600" height="1200" fetchpriority="high">
+          <figcaption>MeadowHawk during workshop systems integration.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -91,7 +97,7 @@
         </div>
         <figure>
           <div class="media-frame tall"><img src="assets/img/meadowhawk-july-vtol-test.jpg" alt="MeadowHawk resting on grass during July 2026 VTOL testing, showing the wing and four lift motors" width="788" height="1400" loading="lazy"></div>
-          <figcaption class="caption" style="color:#bdbdbd;">MeadowHawk during July 2026 VTOL testing. The physical H-shaped lift structure is visible around the fuselage.</figcaption>
+          <figcaption class="caption">MeadowHawk during July 2026 VTOL testing. The physical H-shaped lift structure is visible around the fuselage.</figcaption>
         </figure>
       </div>
     </section>
@@ -205,7 +211,7 @@
             <li>Target-relative delivery accuracy on MeadowHawk had not yet been demonstrated.</li>
             <li>The full detection-to-delivery sequence remained a later integration step.</li>
           </ul>
-          <a class="button dark" href="#" data-config-href="youtubeUrl" data-optional-link hidden>See flight and payload tests</a>
+          <a class="button dark" href="#" data-config-href="payloadDropUrl" data-optional-link hidden>Watch the MEP payload-drop test</a>
         </div>
       </div>
     </section>
@@ -224,7 +230,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div>
-        <div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="testing.html">Testing</a><a href="team.html">About</a><a href="https://robonation.gitbook.io/suas-resources/2026-team-handbook/section-2-design-documentation/2.4-team-website">SUAS website requirements</a></div>
+        <div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="testing.html">Testing</a><a href="team.html">About</a></div>
         <div class="footer-links"><h2>Contact</h2><a href="mailto:rhitsuas@gmail.com" data-email-link>rhitsuas@gmail.com</a><a href="#" data-config-href="youtubeUrl" data-optional-link hidden>YouTube</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div>
       </div>
       <div class="footer-bottom">Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div>
@@ -232,7 +238,7 @@
   </footer>
 
   <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title">
-    <div class="search-header"><label id="search-title" for="site-search"><strong>Search this website</strong></label><input id="site-search" type="search" placeholder="Try “payload,” “SITL,” or “Pixhawk”" data-search-input><button class="search-close" type="button" data-close-search aria-label="Close search">×</button></div>
+    <div class="search-header"><label id="search-title" for="site-search"><strong>Search this website</strong></label><input id="site-search" type="search" placeholder="Try payload, SITL, or Pixhawk" data-search-input><button class="search-close" type="button" data-close-search aria-label="Close search">&times;</button></div>
     <ul class="search-results" data-search-results></ul>
   </dialog>
 </body>

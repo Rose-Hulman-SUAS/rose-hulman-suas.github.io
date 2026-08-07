@@ -29,13 +29,13 @@ Update:
 - `lastUpdated`
 - `sponsorshipSubject`
 - `proofFlightUrl`
+- `payloadDropUrl`
 - `technicalReportUrl`
 - `githubUrl`
 - `youtubeUrl`
 - `instagramUrl`
 - `linkedinUrl`
 - `discordUrl`
-- `campusGroupsUrl`
 
 Leave optional links blank to hide their buttons automatically.
 
@@ -43,6 +43,7 @@ Example:
 
 ```js
 proofFlightUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+payloadDropUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
 githubUrl: "https://github.com/YOUR-ORGANIZATION"
 ```
 
@@ -108,9 +109,9 @@ To add another sponsorship email button, use:
 ```html
 <a class="button dark"
    data-email-link
-   data-email-label="Ask about sponsorship"
+   data-email-label="Sponsor the Team by Emailing Us"
    data-email-subject="sponsorshipSubject">
-  Ask about sponsorship
+  Sponsor the Team by Emailing Us
 </a>
 ```
 
@@ -145,6 +146,19 @@ To add an image:
   <img src="assets/img/test-image.jpg" alt="Describe what the image shows" loading="lazy">
 </div>
 ```
+
+To add an official YouTube video without autoplay, copy a `video-card` from `testing.html` and replace only the video ID, title, and caption. Use the privacy-enhanced address:
+
+```html
+<iframe
+  src="https://www.youtube-nocookie.com/embed/YOUR_VIDEO_ID"
+  title="Plain-language description of the test"
+  loading="lazy"
+  allowfullscreen>
+</iframe>
+```
+
+The caption should name the vehicle and test, then state any important limit on what that test demonstrated.
 
 ## 6. Replace images
 

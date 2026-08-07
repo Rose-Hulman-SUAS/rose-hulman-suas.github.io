@@ -13,11 +13,11 @@ window.RAS_CONFIG = {
 
   /* Optional links. Leave blank to hide the corresponding button. */
   proofFlightUrl: "https://www.youtube.com/watch?v=hljpZ0iLWb4",
+  payloadDropUrl: "https://www.youtube.com/watch?v=kuHBPhvw5UI",
   technicalReportUrl: "",
   githubUrl: "",
   youtubeUrl: "https://www.youtube.com/@RoseAerialSystems",
   instagramUrl: "https://www.instagram.com/roseaerialsystems/",
   linkedinUrl: "https://www.linkedin.com/company/rose-aerial-systems/",
-  discordUrl: "https://discord.gg/WyB6RrzMNB",
-  campusGroupsUrl: "https://rosehulman.campusgroups.com/feeds?type=club&type_id=35469&tab=about"
+  discordUrl: "https://discord.gg/WyB6RrzMNB"
 };
