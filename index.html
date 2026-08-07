@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Rose Aerial Systems is building MeadowHawk, a student-designed VTOL aircraft for the 2026 Student Unmanned Aerial Systems Competition.">
+  <meta name="description" content="Rose Aerial Systems is Rose-Hulman Institute of Technology's student research and competition team for unmanned aircraft and autonomous flight.">
   <meta name="theme-color" content="#080808">
   <title>Rose Aerial Systems | MeadowHawk</title>
   <link rel="icon" href="assets/img/favicon.png">
@@ -29,8 +29,8 @@
         <a href="index.html" data-nav="home">Home</a>
         <a href="engineering.html" data-nav="engineering">Engineering</a>
         <a href="testing.html" data-nav="testing">Testing</a>
-        <a href="team.html" data-nav="team">Team</a>
-        <button class="search-button" type="button" data-open-search aria-label="Search this website">Search <span aria-hidden="true">/</span></button>
+        <a href="team.html" data-nav="team">About</a>
+        <button class="search-button" type="button" data-open-search aria-label="Search this website" aria-keyshortcuts="/" title="Search this website (press /)">Search</button>
       </nav>
     </div>
   </header>
@@ -45,12 +45,11 @@
           <div class="hero-actions">
             <a class="button" href="engineering.html">Explore the aircraft</a>
             <a class="button secondary" href="testing.html#proof-flight">View flight testing</a>
-            <a class="button secondary" href="#" data-config-href="proofFlightUrl" data-optional-link hidden>Watch proof-of-flight video</a>
           </div>
+          <p class="hero-proof"><strong>Proof flight · July 21, 2026</strong> MeadowHawk flew six autonomous VTOL waypoint laps totaling more than one mile. <a href="#" data-config-href="proofFlightUrl" data-optional-link hidden>Watch the video.</a></p>
         </div>
         <div class="hero-art">
           <img src="assets/img/aircraft-wireframe.png" alt="CAD wireframe view of the MeadowHawk VTOL fixed-wing aircraft" width="1455" height="1107">
-          <div class="hero-badge"><strong>Proof-flight milestone:</strong> on July 25, MeadowHawk flew six autonomous VTOL waypoint laps totaling more than one mile.</div>
         </div>
       </div>
     </section>
@@ -80,7 +79,7 @@
         <div class="section-heading">
           <span class="kicker">Competition mission</span>
           <h2 id="mission-title">From takeoff to delivery</h2>
-          <p>The mission connects the aircraft, flight software, camera, payload system, and ground station. Each step depends on the one before it.</p>
+          <p>The planned competition mission ties together autonomous flight, a camera search, target location, and payload delivery, with the ground station and safety pilot supervising the aircraft.</p>
         </div>
         <div class="mission-flow" aria-label="MeadowHawk mission sequence">
           <div class="mission-step"><strong>Vertical takeoff</strong></div>
@@ -97,25 +96,33 @@
       <div class="container">
         <div class="section-heading">
           <span class="kicker">System overview</span>
-          <h2 id="systems-title">How MeadowHawk comes together</h2>
-          <p>MeadowHawk is one aircraft, but building it takes several kinds of engineering. These sections show how the major systems fit together.</p>
+          <h2 id="systems-title">The aircraft is one system</h2>
+          <p>Airframe, propulsion, flight controls, mission software, camera, communications, and payload work all affect one another, so the team develops them as parts of the same aircraft.</p>
         </div>
-        <div class="grid four">
+        <div class="grid three">
           <article class="card">
-            <a class="stretched" href="engineering.html#airframe"><div class="card-icon"></div><h3>Airframe</h3></a>
+            <a class="stretched" href="engineering.html#airframe"><div class="card-icon"></div><h3>Airframe and structure</h3></a>
             <p>The wing, fuselage, tail, lift booms, and landing gear have to be light enough to fly and sturdy enough for field use.</p>
           </article>
           <article class="card">
-            <a class="stretched" href="engineering.html#propulsion"><div class="card-icon"></div><h3>Propulsion</h3></a>
+            <a class="stretched" href="engineering.html#propulsion"><div class="card-icon"></div><h3>Propulsion and power</h3></a>
             <p>Separate lift and cruise motors share the battery system but serve different parts of the flight.</p>
           </article>
           <article class="card">
-            <a class="stretched" href="engineering.html#avionics"><div class="card-icon"></div><h3>Autonomy</h3></a>
-            <p>ArduPilot flies the aircraft while the companion computer handles higher-level mission tasks.</p>
+            <a class="stretched" href="engineering.html#flight-control"><div class="card-icon"></div><h3>Flight control and navigation</h3></a>
+            <p>The Pixhawk stabilizes the aircraft, follows the flight plan, and manages flight modes and recovery behavior.</p>
           </article>
           <article class="card">
-            <a class="stretched" href="engineering.html#payload"><div class="card-icon"></div><h3>Mission systems</h3></a>
-            <p>The camera, mapping software, target-location tools, and payload bay support the search-and-delivery mission.</p>
+            <a class="stretched" href="engineering.html#mission-computing"><div class="card-icon"></div><h3>Mission computing and perception</h3></a>
+            <p>Python software on the Jetson handles mission state, camera frames, and the detection pipeline.</p>
+          </article>
+          <article class="card">
+            <a class="stretched" href="engineering.html#communications"><div class="card-icon"></div><h3>Communications and ground station</h3></a>
+            <p>Independent pilot-control and telemetry links keep manual takeover separate from mission supervision.</p>
+          </article>
+          <article class="card">
+            <a class="stretched" href="engineering.html#payload"><div class="card-icon"></div><h3>Payload system</h3></a>
+            <p>The payload bay, release hardware, and delivery procedure are tested separately before full mission integration.</p>
           </article>
         </div>
       </div>
@@ -146,11 +153,11 @@
         <div>
           <span class="kicker">Rose Aerial Systems</span>
           <h2 id="team-cta-title">Built by students across Rose-Hulman</h2>
-          <p>Our team includes students working in aircraft design, manufacturing, electronics, controls, software, computer vision, testing, and flight operations.</p>
+          <p>Rose Aerial Systems brings students together to design, manufacture, integrate, and flight-test unmanned aircraft. Along the way, members build practical skills in engineering, project management, and field operations.</p>
         </div>
         <div class="button-row">
           <a class="button light" href="team.html">Meet the team</a>
-          <a class="button secondary" href="team.html#sponsors">Sponsors and partners</a>
+          <a class="button secondary" href="mailto:rhitsuas@gmail.com?subject=Rose%20Aerial%20Systems%20sponsorship%20inquiry" data-email-link data-email-label="Sponsor the team" data-email-subject="sponsorshipSubject">Sponsor the team</a>
         </div>
       </div>
     </section>
@@ -167,18 +174,19 @@
           <h2>Explore</h2>
           <a href="engineering.html">Engineering</a>
           <a href="testing.html">Testing</a>
-          <a href="team.html">Team</a>
+          <a href="team.html">About</a>
           <a href="https://robonation.gitbook.io/suas-resources/2026-team-handbook/section-2-design-documentation/2.4-team-website">SUAS website requirements</a>
         </div>
         <div class="footer-links">
           <h2>Contact</h2>
-          <a data-email-link>Team email coming soon</a>
+          <a href="mailto:rhitsuas@gmail.com" data-email-link>rhitsuas@gmail.com</a>
           <a href="#" data-config-href="githubUrl" data-optional-link hidden>GitHub</a>
+          <a href="#" data-config-href="youtubeUrl" data-optional-link hidden>YouTube</a>
           <a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a>
           <a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a>
         </div>
       </div>
-      <div class="footer-bottom">Last updated <span data-config="lastUpdated">July 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div>
+      <div class="footer-bottom">Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div>
     </div>
   </footer>
 

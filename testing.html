@@ -18,7 +18,7 @@
     <div class="header-inner">
       <a class="brand" href="index.html" aria-label="Rose Aerial Systems home"><img src="assets/img/logo-mark.png" alt="" width="52" height="52"><span class="brand-text"><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-nav-toggle>Menu</button>
-      <nav class="main-nav" id="main-navigation" aria-label="Primary" data-main-nav><a href="index.html" data-nav="home">Home</a><a href="engineering.html" data-nav="engineering">Engineering</a><a href="testing.html" data-nav="testing">Testing</a><a href="team.html" data-nav="team">Team</a><button class="search-button" type="button" data-open-search aria-label="Search this website">Search <span aria-hidden="true">/</span></button></nav>
+      <nav class="main-nav" id="main-navigation" aria-label="Primary" data-main-nav><a href="index.html" data-nav="home">Home</a><a href="engineering.html" data-nav="engineering">Engineering</a><a href="testing.html" data-nav="testing">Testing</a><a href="team.html" data-nav="team">About</a><button class="search-button" type="button" data-open-search aria-label="Search this website" aria-keyshortcuts="/" title="Search this website (press /)">Search</button></nav>
     </div>
   </header>
 
@@ -27,7 +27,7 @@
       <div class="container">
         <div class="breadcrumb"><a href="index.html">Home</a> / Testing</div>
         <p class="eyebrow">Development history</p>
-        <h1>Test, learn, fix, repeat</h1>
+        <h1>From bench tests to proof flight</h1>
         <p>We do not jump from CAD to a full mission. New systems start in simulation or on the bench, move to MEP, and then reach MeadowHawk through short, staged flight tests. When something goes wrong, we record what happened and what changed.</p>
       </div>
     </section>
@@ -61,11 +61,11 @@
             <h2>A yaw problem grounded MeadowHawk</h2>
             <p>An early VTOL flight developed a steady clockwise yaw. The counter-clockwise motor pair ran much hotter, and the front-left motor was damaged. We grounded the aircraft and checked the logs, motor mapping, rotation directions, ESC setup, controller allocation, wiring, mounts, and structural stiffness. The available record points to several possible contributors rather than one proven root cause.</p>
             <p>The carbon lift structure remained H-shaped, but we changed ArduPilot from an H-frame allocation to an X-frame allocation and rechecked each motor's physical location and direction. We also installed a matched set of DJI lift motors, reinforced the arm and motor-pod structure, and repeated no-prop, restrained, hover, and temperature checks.</p>
-            <div class="callout"><h3>Back to stable flight</h3><p>On July 22, MeadowHawk held QSTABILIZE, QHOVER, and QLOITER and completed QRTL twice. A July 23 waypoint test ended safely when the battery-voltage failsafe started the recovery. Those flights rebuilt the VTOL baseline before the proof attempt.</p></div>
+            <div class="callout"><h3>Follow-up checks</h3><p>In follow-up records, restrained tests, short hovers, and assisted-mode flights no longer showed the persistent yaw or severe pairwise heating. The exact day-by-day sequence of those checks is still being confirmed.</p></div>
           </article>
 
           <article class="timeline-entry" id="proof-flight">
-            <time datetime="2026-07-25">25 July 2026</time>
+            <time datetime="2026-07-21">21 July 2026</time>
             <h2>Accepted one-mile proof flight</h2>
             <p>MeadowHawk flew six approximately 900-foot waypoint laps for a total of more than one mile. This was a multirotor-only autonomous mission using four DJI 4216 KV310 lift motors, three parallel 6S batteries, and ArduPilot's X-frame control allocation. The aircraft finished without manual takeover, and competition reviewers accepted the proof.</p>
             <ul class="check-list">
@@ -86,7 +86,7 @@
 
     <section class="section dark" aria-labelledby="future-tests-title">
       <div class="container">
-        <div class="section-heading"><span class="kicker">Next steps</span><h2 id="future-tests-title">Work still ahead</h2><p>These tests were still pending when the TDR was completed. They are plans, not completed results.</p></div>
+        <div class="section-heading"><span class="kicker">Next steps</span><h2 id="future-tests-title">Work still ahead</h2><p>At TDR completion, the following tests were planned but not yet completed.</p></div>
         <div class="grid three">
           <article class="card"><h3>Transition and cruise</h3><p>Build from manual fixed-wing checks to forward transition, cruise tuning, return transition, and vertical landing.</p></article>
           <article class="card"><h3>Mission systems</h3><p>Measure mapping coverage, live detection, geolocation error, and payload-delivery accuracy before joining them into one mission.</p></article>
@@ -105,7 +105,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div><div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="engineering.html">Engineering</a><a href="team.html">Team</a><a href="https://robonation.gitbook.io/suas-resources/2026-team-handbook/section-2-design-documentation/2.4-team-website">SUAS website requirements</a></div><div class="footer-links"><h2>Contact</h2><a data-email-link>Team email coming soon</a><a href="#" data-config-href="githubUrl" data-optional-link hidden>GitHub</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div></div><div class="footer-bottom">Last updated <span data-config="lastUpdated">July 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div></div>
+    <div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div><div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="engineering.html">Engineering</a><a href="team.html">About</a><a href="https://robonation.gitbook.io/suas-resources/2026-team-handbook/section-2-design-documentation/2.4-team-website">SUAS website requirements</a></div><div class="footer-links"><h2>Contact</h2><a href="mailto:rhitsuas@gmail.com" data-email-link>rhitsuas@gmail.com</a><a href="#" data-config-href="youtubeUrl" data-optional-link hidden>YouTube</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div></div><div class="footer-bottom">Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div></div>
   </footer>
 
   <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title"><div class="search-header"><label id="search-title" for="site-search"><strong>Search this website</strong></label><input id="site-search" type="search" placeholder="Try “payload,” “SITL,” or “Pixhawk”" data-search-input><button class="search-close" type="button" data-close-search aria-label="Close search">×</button></div><ul class="search-results" data-search-results></ul></dialog>

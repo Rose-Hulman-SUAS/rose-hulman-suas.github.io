@@ -24,12 +24,16 @@
   const emailLinks = document.querySelectorAll("[data-email-link]");
   emailLinks.forEach((link) => {
     const email = config.teamEmail || "";
+    const label = link.dataset.emailLabel || "";
+    const subjectKey = link.dataset.emailSubject;
+    const subject = subjectKey ? config[subjectKey] : "";
     if (email && !email.startsWith("REPLACE-")) {
-      link.href = `mailto:${email}`;
-      link.textContent = email;
+      const subjectQuery = subject ? "?subject=" + encodeURIComponent(subject) : "";
+      link.href = "mailto:" + email + subjectQuery;
+      link.textContent = label || email;
     } else {
       link.removeAttribute("href");
-      link.textContent = "Team email coming soon";
+      link.textContent = label || "Email unavailable";
       link.classList.add("needs-edit");
     }
   });
@@ -52,17 +56,20 @@
   }
 
   const searchEntries = [
-    { title: "Home", url: "index.html", text: "Rose Aerial Systems MeadowHawk mission storm response autonomous VTOL QuadPlane" },
+    { title: "Home", url: "index.html", text: "Rose Aerial Systems MeadowHawk student research competition unmanned aircraft autonomous VTOL QuadPlane" },
     { title: "Competition Mission", url: "index.html#mission", text: "VTOL launch autonomous navigation mapping search detection payload delivery return landing" },
     { title: "Vehicle Overview", url: "index.html#aircraft", text: "QuadPlane pusher H-shaped lift structure X-frame control allocation 19 lb design condition Pixhawk Jetson three 6S batteries" },
-    { title: "Engineering Overview", url: "engineering.html", text: "airframe propulsion power avionics autonomy perception payload safety" },
-    { title: "Airframe and Aerodynamics", url: "engineering.html#airframe", text: "fixed wing MH32 structures Y-tail booms landing gear" },
+    { title: "Engineering Overview", url: "engineering.html", text: "airframe propulsion power flight control mission computing communications payload safety" },
+    { title: "Airframe and Structure", url: "engineering.html#airframe", text: "fixed wing MH32 H-shaped lift structure X-frame control allocation Y-tail booms landing gear" },
     { title: "Propulsion and Power", url: "engineering.html#propulsion", text: "lift motors cruise motor batteries PDB ESC power distribution" },
-    { title: "Avionics and Autonomy", url: "engineering.html#avionics", text: "Pixhawk 6X ArduPilot Jetson Orin NX MAVLink Mission Planner ELRS telemetry" },
-    { title: "Perception and Payload", url: "engineering.html#payload", text: "eCon camera computer vision mapping target detection bottle beacon payload drop" },
+    { title: "Flight Control and Navigation", url: "engineering.html#flight-control", text: "Pixhawk 6X ArduPilot aircraft control modes navigation geofence" },
+    { title: "Mission Computing and Perception", url: "engineering.html#mission-computing", text: "Jetson Orin NX Python PyMAVLink camera pipeline OpenCV target detection" },
+    { title: "Communications and Ground Station", url: "engineering.html#communications", text: "safety pilot ELRS telemetry Mission Planner ground control station" },
+    { title: "Payload System", url: "engineering.html#payload", text: "bottle beacon payload delivery mechanical release test" },
     { title: "Testing History", url: "testing.html", text: "MEP SITL flight test yaw incident X-frame proof flight one mile" },
     { title: "Proof of Flight", url: "testing.html#proof-flight", text: "one-mile autonomous waypoint proof flight approved" },
-    { title: "Team", url: "team.html", text: "members leadership subteams constitution Rose-Hulman sponsors contact" },
+    { title: "About Rose Aerial Systems", url: "team.html", text: "student organization competition team aircraft projects members subteams Rose-Hulman" },
+    { title: "Join and Follow", url: "team.html#contact", text: "CampusGroups Discord YouTube Instagram LinkedIn membership contact" },
     { title: "Sponsors", url: "team.html#sponsors", text: "partners sponsors support Rose-Hulman" }
   ];
 

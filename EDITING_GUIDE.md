@@ -8,9 +8,11 @@ The easiest local workflow is:
 2. Extract this website folder.
 3. In Visual Studio Code, choose **File > Open Folder** and select the website folder.
 4. Use **Search** in the left sidebar to find text across all pages.
-5. Preview the site with `python -m http.server 8000` or the VS Code Live Server extension.
+5. Preview the site beside the editor with the VS Code Live Preview or Live Server extension. You can also run `python -m http.server 8000` from the website folder.
 
 No programming installation is required beyond a web browser and text editor. Python is only used for the optional local preview command.
+
+This is a static HTML website, so it does not have a drag-and-drop editor like Google Sites. A split view in Visual Studio Code is the closest simple workflow without rebuilding the site in a different platform: edit one small text block, save, and see the browser refresh. A full visual editor would require moving the site to a site builder or adding a content-management system.
 
 ## 1. Edit shared information once
 
@@ -23,14 +25,17 @@ assets/js/config.js
 Update:
 
 - `teamEmail`
-- `currentWeight`
+- `designWeight`
 - `lastUpdated`
+- `sponsorshipSubject`
 - `proofFlightUrl`
 - `technicalReportUrl`
 - `githubUrl`
+- `youtubeUrl`
 - `instagramUrl`
 - `linkedinUrl`
-- `recruitmentUrl`
+- `discordUrl`
+- `campusGroupsUrl`
 
 Leave optional links blank to hide their buttons automatically.
 
@@ -54,29 +59,38 @@ Change only the text between the opening and closing tags unless you are intenti
 
 ## 3. Add a team member
 
-Open `team.html` and find the roster section. Copy one complete block:
+First, place an approved portrait in `assets/img/`. Use a short lowercase filename such as `jane-doe.jpg`. Portraits should use a 4:5 crop, such as 800 by 1000 pixels, and normally stay under 500 KB. Remove GPS and other private metadata before publishing.
+
+Open `team.html` and find:
 
 ```html
-<article class="card roster-card">
-  <div class="avatar" aria-hidden="true">01</div>
-  <div>
-    <h3>Replace with name</h3>
-    <p>Role</p>
+<section class="section" aria-labelledby="roster-title" hidden>
+```
+
+Remove the word `hidden` from that line when you add the first approved profile. Then find:
+
+```html
+<div class="grid three profile-grid">
+```
+
+Copy the example profile block immediately below it, paste the copy inside the same grid, and remove the surrounding comment markers from the copy:
+
+```html
+<article class="card profile-card">
+  <img src="assets/img/first-last.jpg" alt="Portrait of First Last" width="800" height="1000" loading="lazy">
+  <div class="profile-copy">
+    <h3>First Last</h3>
+    <p class="profile-role">Team role</p>
+    <p>Two or three sentences about the member's work, experience, or interests.</p>
   </div>
 </article>
 ```
 
-Paste it inside the roster grid and update the number, name, and role.
-
-For headshots, replace the `avatar` div with:
-
-```html
-<img class="avatar" src="assets/img/member-name.jpg" alt="Member Name">
-```
-
-Crop headshots to square images before adding them.
+Update the image path, alternative text, name, role, and short bio. Confirm that the member has approved the photo and biography before publishing them.
 
 ## 4. Add sponsor logos
+
+The sponsor buttons use `teamEmail` and `sponsorshipSubject` from `assets/js/config.js`. Change those two values once and every sponsor button will update automatically.
 
 1. Put the logo in `assets/img/`, preferably as PNG, SVG, or WebP.
 2. In `team.html`, replace a sponsor placeholder with:
@@ -88,6 +102,17 @@ Crop headshots to square images before adding them.
 ```
 
 Use only approved sponsor logos and links.
+
+To add another sponsorship email button, use:
+
+```html
+<a class="button dark"
+   data-email-link
+   data-email-label="Ask about sponsorship"
+   data-email-subject="sponsorshipSubject">
+  Ask about sponsorship
+</a>
+```
 
 ## 5. Add a test entry
 
@@ -129,6 +154,7 @@ Add new images to `assets/img/`. For good performance:
 - Use PNG or SVG for logos and diagrams.
 - Resize ordinary web images to roughly 1200-1800 pixels wide.
 - Keep most photographs under 500 KB.
+- Remove location data and other private metadata from photographs.
 - Write meaningful `alt` text for every informative image.
 
 Do not remove the `alt` attribute. Decorative images should use `alt=""`.
