@@ -23,18 +23,14 @@
   </header>
 
   <main id="main-content">
-    <section class="page-hero">
-      <div class="container page-hero-layout">
+    <section class="page-hero testing-hero">
+      <div class="container testing-hero-content">
         <div class="page-hero-copy">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Testing</span></nav>
           <p class="eyebrow">Development history</p>
           <h1>From bench tests to proof flight</h1>
           <p>We do not jump from CAD to a full mission. New systems start in simulation or on the bench, move to MEP, and then reach MeadowHawk through short, staged flight tests. When something goes wrong, we record what happened and what changed.</p>
         </div>
-        <figure class="page-hero-media">
-          <img src="assets/img/meadowhawk-vtol-flight.jpg" alt="MeadowHawk airborne above a tree line during VTOL flight testing" width="800" height="670" fetchpriority="high">
-          <figcaption>MeadowHawk during VTOL flight testing. Dated results below remain tied to their individual test records.</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -45,7 +41,10 @@
             <time datetime="2025">Early program development</time>
             <h2>Analytical design and major aircraft revisions</h2>
             <p>We began with estimates for wing loading, stall speed, drag, cruise thrust, hover power, and mission energy. CAD and eCalc helped us compare motors, propellers, batteries, mass, and geometry. The aircraft changed several times as real components replaced early estimates.</p>
-            <div class="timeline-media media-frame"><img src="assets/img/meadowhawk-cad.jpg" alt="Early MeadowHawk CAD configuration" width="1350" height="837" loading="lazy"></div>
+            <div class="timeline-gallery early-design-gallery">
+              <div class="media-frame"><img src="assets/img/meadowhawk-cad.jpg" alt="Early MeadowHawk CAD configuration" width="1350" height="837" loading="lazy"></div>
+              <div class="media-frame"><img src="assets/img/meadowhawk-early-airframe.jpg" alt="Early MeadowHawk airframe and rear-motor assembly during component fit checks" width="1100" height="1466" loading="lazy"></div>
+            </div>
           </article>
 
           <article class="timeline-entry" id="mep">
@@ -53,6 +52,7 @@
             <h2>Multirotor Experiment Platform</h2>
             <p>Before MeadowHawk was ready, MEP carried the Pixhawk, Jetson, camera, communications hardware, and payload equipment. We used it for waypoint work, camera integration, competition-altitude image collection, and payload releases. These flights reduced integration risk, but they did not prove that the same systems were ready on MeadowHawk.</p>
             <div class="timeline-media media-frame"><img src="assets/img/mep-flight.jpg" alt="Multirotor Experiment Platform during a field test" width="1200" height="677" loading="lazy"></div>
+            <div class="timeline-media media-frame"><img src="assets/img/mep-test-team.jpg" alt="Rose Aerial Systems members with MEP after a field test flight" width="1800" height="1350" loading="lazy"></div>
             <figure class="video-card">
               <div class="video-embed">
                 <iframe src="https://www.youtube-nocookie.com/embed/kuHBPhvw5UI" title="MEP2 autonomous takeoff and payload-drop flight test" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -87,6 +87,7 @@
               <li>No manual takeover needed to finish the mission</li>
             </ul>
             <div class="callout"><h3>What this flight did not prove</h3><p>The proof flight did not include fixed-wing transition, mapping, live target detection, geolocation, payload delivery on MeadowHawk, or the complete competition mission.</p></div>
+            <div class="timeline-media media-frame proof-flight-still"><img src="assets/img/meadowhawk-vtol-flight.jpg" alt="MeadowHawk airborne above a tree line during VTOL flight testing" width="800" height="670" loading="lazy"></div>
             <figure class="video-card">
               <div class="video-embed">
                 <iframe src="https://www.youtube-nocookie.com/embed/hljpZ0iLWb4" title="Accepted MeadowHawk proof flight from July 21, 2026" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -54,23 +54,68 @@
       </div>
     </section>
 
+    <section class="vehicle-story" id="meadowhawk" aria-labelledby="meadowhawk-title">
+      <div class="vehicle-spread">
+        <img src="assets/img/meadowhawk-field-spread.jpg" alt="MeadowHawk fully assembled on a grass field during nighttime testing" width="1920" height="1080" loading="eager">
+        <div class="vehicle-spread-shade" aria-hidden="true"></div>
+        <div class="vehicle-spread-heading">
+          <p class="eyebrow">2025-2026 competition aircraft</p>
+          <h2 id="meadowhawk-title">Meet MeadowHawk</h2>
+          <p>A five-motor VTOL fixed-wing aircraft developed for the 2026 SUAS mission.</p>
+        </div>
+        <dl class="vehicle-spread-facts">
+          <div><dt>Configuration</dt><dd>Five-motor QuadPlane</dd></div>
+          <div><dt>Proof flight</dt><dd>July 21, 2026</dd></div>
+          <div><dt>TDR design condition</dt><dd>Approximately 19 lb</dd></div>
+        </dl>
+      </div>
+      <div class="container vehicle-intro">
+        <p>MeadowHawk takes its name from the red meadowhawk dragonfly, found across the Midwest, and Rose-Hulman's red identity. The aircraft uses four lift motors for vertical flight and a rear pusher for its planned fixed-wing cruise mode.</p>
+        <p>The July 21 proof flight demonstrated autonomous VTOL waypoint flight. Fixed-wing transition and the complete search-and-delivery mission remain separate integration work.</p>
+      </div>
+    </section>
+
     <section class="section compact" id="aircraft" aria-labelledby="aircraft-title">
       <div class="container">
         <div class="section-heading">
           <span class="kicker">Vehicle overview</span>
           <h2 id="aircraft-title">A fixed wing that can take off vertically</h2>
-          <p>Four motors handle vertical takeoff, hover, and landing. A fifth motor at the rear provides cruise thrust. This gives us runway-independent operation without giving up the endurance of a fixed-wing aircraft.</p>
+          <p>Four motors handle vertical takeoff, hover, and landing. A fifth motor at the rear provides cruise thrust. The design combines runway-independent operation with the goal of retaining fixed-wing cruise efficiency.</p>
         </div>
-        <dl class="spec-grid">
-          <div class="spec"><dt>Configuration</dt><dd>QuadPlane with rear pusher</dd></div>
-          <div class="spec"><dt>Lift arrangement</dt><dd>H-shaped structure; X-frame control allocation</dd></div>
-          <div class="spec"><dt>TDR design condition</dt><dd data-config="designWeight">Approximately 19 lb</dd></div>
-          <div class="spec"><dt>Energy system</dt><dd>Three parallel 6S 4500 mAh packs</dd></div>
-          <div class="spec"><dt>Flight controller</dt><dd>Pixhawk 6X</dd></div>
-          <div class="spec"><dt>Companion computer</dt><dd>NVIDIA Jetson Orin NX</dd></div>
-          <div class="spec"><dt>Ground station</dt><dd>Mission Planner</dd></div>
-          <div class="spec"><dt>Mission</dt><dd>Search and relief delivery</dd></div>
-        </dl>
+        <div class="spec-grid">
+          <article class="spec" tabindex="0">
+            <span class="spec-label">Configuration</span><strong class="spec-value">QuadPlane with rear pusher</strong>
+            <p class="spec-detail">Four lift motors handle vertical flight. The rear motor provides thrust for the planned fixed-wing cruise mode.</p>
+          </article>
+          <article class="spec" tabindex="0">
+            <span class="spec-label">Lift arrangement</span><strong class="spec-value">H-shaped structure; X-frame control allocation</strong>
+            <p class="spec-detail">The physical carbon structure remains H-shaped. ArduPilot's X-frame allocation matches the installed motor positions.</p>
+          </article>
+          <article class="spec" tabindex="0">
+            <span class="spec-label">TDR design condition</span><strong class="spec-value" data-config="designWeight">Approximately 19 lb</strong>
+            <p class="spec-detail">This is the aircraft weight used for the Technical Design Report design condition, not a newly measured competition weight.</p>
+          </article>
+          <article class="spec" tabindex="0">
+            <span class="spec-label">Energy system</span><strong class="spec-value">Three parallel 6S 4500 mAh packs</strong>
+            <p class="spec-detail">Three 22.2 V packs operate in parallel as one shared electrical system for lift, cruise, avionics, and mission hardware.</p>
+          </article>
+          <article class="spec" tabindex="0">
+            <span class="spec-label">Flight controller</span><strong class="spec-value">Pixhawk 6X</strong>
+            <p class="spec-detail">ArduPilot on the Pixhawk handles stabilization, navigation, flight modes, and recovery behavior.</p>
+          </article>
+          <article class="spec" tabindex="0">
+            <span class="spec-label">Companion computer</span><strong class="spec-value">NVIDIA Jetson Orin NX</strong>
+            <p class="spec-detail">Python software on the Jetson runs mission state and perception while the Pixhawk retains the flight-control loop.</p>
+          </article>
+          <article class="spec" tabindex="0">
+            <span class="spec-label">Ground station</span><strong class="spec-value">Mission Planner</strong>
+            <p class="spec-detail">The ground crew uses Mission Planner for planning, telemetry, mode supervision, and flight-log review.</p>
+          </article>
+          <article class="spec" tabindex="0">
+            <span class="spec-label">Mission</span><strong class="spec-value">Search and relief delivery</strong>
+            <p class="spec-detail">Search, target location, and delivery are planned competition capabilities; they have not yet been demonstrated together on MeadowHawk.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -81,43 +126,48 @@
           <h2 id="mission-title">From takeoff to delivery</h2>
           <p>The planned competition mission ties together autonomous flight, a camera search, target location, and payload delivery, with the ground station and safety pilot supervising the aircraft.</p>
         </div>
-        <figure class="conops-figure">
-          <img src="assets/img/mission-conops.png" alt="Planned mission sequence: VTOL takeoff and transition, waypoints, mapping and search, detection and delivery, then return home and vertical landing" width="1399" height="137" loading="lazy">
-          <figcaption><strong>Planned mission concept.</strong> This poster-board sequence describes the intended competition mission. It is not a record of a completed end-to-end flight.</figcaption>
-        </figure>
+        <ol class="mission-flow" aria-label="Planned competition mission stages">
+          <li class="mission-step" tabindex="0"><span class="mission-number">01</span><strong>Vertical takeoff</strong><p>Launch and climb under QuadPlane VTOL control.</p></li>
+          <li class="mission-step" tabindex="0"><span class="mission-number">02</span><strong>Autonomous navigation</strong><p>Follow the planned waypoint route under safety-pilot supervision.</p></li>
+          <li class="mission-step" tabindex="0"><span class="mission-number">03</span><strong>Search and mapping</strong><p>Enter the assigned area and collect mission imagery.</p></li>
+          <li class="mission-step" tabindex="0"><span class="mission-number">04</span><strong>Target detection</strong><p>Process imagery and estimate the target's location.</p></li>
+          <li class="mission-step" tabindex="0"><span class="mission-number">05</span><strong>Payload delivery</strong><p>Navigate to the delivery point and command the selected release.</p></li>
+          <li class="mission-step" tabindex="0"><span class="mission-number">06</span><strong>Return and landing</strong><p>Return home and recover in vertical flight.</p></li>
+        </ol>
+        <p class="mission-note">These are planned competition stages. MeadowHawk has not completed them as one end-to-end mission.</p>
       </div>
     </section>
 
     <section class="section" aria-labelledby="systems-title">
-      <div class="container">
+      <div class="container systems-layout">
         <div class="section-heading">
           <span class="kicker">System overview</span>
           <h2 id="systems-title">The aircraft is one system</h2>
           <p>Airframe, propulsion, flight controls, mission software, camera, communications, and payload work all affect one another, so the team develops them as parts of the same aircraft.</p>
         </div>
-        <div class="grid three">
-          <article class="card">
-            <a class="stretched" href="engineering.html#airframe"><div class="card-icon"></div><h3>Airframe and structure</h3></a>
+        <div class="systems-grid">
+          <article class="system-item">
+            <a href="engineering.html#airframe"><h3>Airframe and structure</h3></a>
             <p>The wing, fuselage, tail, lift booms, and landing gear have to be light enough to fly and sturdy enough for field use.</p>
           </article>
-          <article class="card">
-            <a class="stretched" href="engineering.html#propulsion"><div class="card-icon"></div><h3>Propulsion and power</h3></a>
+          <article class="system-item">
+            <a href="engineering.html#propulsion"><h3>Propulsion and power</h3></a>
             <p>Separate lift and cruise motors share the battery system but serve different parts of the flight.</p>
           </article>
-          <article class="card">
-            <a class="stretched" href="engineering.html#flight-control"><div class="card-icon"></div><h3>Flight control and navigation</h3></a>
+          <article class="system-item">
+            <a href="engineering.html#flight-control"><h3>Flight control and navigation</h3></a>
             <p>The Pixhawk stabilizes the aircraft, follows the flight plan, and manages flight modes and recovery behavior.</p>
           </article>
-          <article class="card">
-            <a class="stretched" href="engineering.html#mission-computing"><div class="card-icon"></div><h3>Mission computing and perception</h3></a>
+          <article class="system-item">
+            <a href="engineering.html#mission-computing"><h3>Mission computing and perception</h3></a>
             <p>Python software on the Jetson handles mission state, camera frames, and the detection pipeline.</p>
           </article>
-          <article class="card">
-            <a class="stretched" href="engineering.html#communications"><div class="card-icon"></div><h3>Communications and ground station</h3></a>
+          <article class="system-item">
+            <a href="engineering.html#communications"><h3>Communications and ground station</h3></a>
             <p>Independent pilot-control and telemetry links keep manual takeover separate from mission supervision.</p>
           </article>
-          <article class="card">
-            <a class="stretched" href="engineering.html#payload"><div class="card-icon"></div><h3>Payload system</h3></a>
+          <article class="system-item">
+            <a href="engineering.html#payload"><h3>Payload system</h3></a>
             <p>The payload bay, release hardware, and delivery procedure are tested separately before full mission integration.</p>
           </article>
         </div>

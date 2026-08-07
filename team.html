@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="About Rose Aerial Systems, Rose-Hulman's student team for unmanned aircraft, autonomous flight, and aerospace competition projects.">
+  <meta name="description" content="About Rose Aerial Systems, Rose-Hulman's student aerial robotics research and competition team for unmanned and autonomous flight.">
   <meta name="theme-color" content="#080808">
   <title>About | Rose Aerial Systems</title>
   <link rel="icon" href="assets/img/favicon.png">
@@ -29,31 +29,27 @@
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>About</span></nav>
           <p class="eyebrow">Rose-Hulman student organization</p>
           <h1>About Rose Aerial Systems</h1>
-          <p>Rose Aerial Systems is a student research and competition team at Rose-Hulman Institute of Technology. We build unmanned aircraft and autonomous systems, giving members a place to turn classroom ideas into working hardware and flight-tested software.</p>
+          <p>Rose Aerial Systems is Rose-Hulman's student aerial robotics research and competition team. We bring students together to design, build, test, and document unmanned aircraft and autonomous flight systems.</p>
         </div>
-        <figure class="page-hero-media">
-          <img src="assets/img/team-workshop-wide.jpg" alt="Rose Aerial Systems members gathered in the workshop" width="1800" height="1200" fetchpriority="high">
-          <figcaption>Rose Aerial Systems members in the workshop.</figcaption>
-        </figure>
+        <div class="page-hero-media">
+          <img src="assets/img/team-workshop-wide.jpg" alt="Rose Aerial Systems members gathered with student-built aircraft and project hardware" width="1800" height="1200" fetchpriority="high">
+        </div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="purpose-title">
-      <div class="container split">
-        <figure>
-          <div class="media-frame team-photo"><img src="assets/img/team-workshop.jpg" alt="Rose Aerial Systems members standing in the workshop behind several student-built aircraft" width="1800" height="1200"></div>
-          <figcaption class="caption">Rose Aerial Systems members with student-built aircraft in the team's workshop.</figcaption>
-        </figure>
+      <div class="container split about-purpose">
+        <div class="media-frame about-purpose-image"><img src="assets/img/team-project-work.jpg" alt="Rose Aerial Systems members working together on student aircraft and electronics" width="1800" height="1200" loading="lazy"></div>
         <div>
           <span class="kicker">Our purpose</span>
-          <h2 id="purpose-title">We carry an aircraft from requirements to flight</h2>
-          <p>Members begin with mission requirements and analysis, then move through CAD, composite and conventional manufacturing, systems integration, ground tests, flight tests, and autonomous mission development. The work draws on aerodynamics, structures, propulsion, power, avionics, embedded computing, guidance and control, computer vision, machine learning, and systems engineering.</p>
-          <p>That range gives students practical experience with technical design, project management, documentation, manufacturing, repairs, testing, and multidisciplinary teamwork. Members learn from one another, record what worked, and leave a stronger starting point for the next team.</p>
+          <h2 id="purpose-title">Research, competition, and hands-on flight</h2>
+          <p>We bring together students who are curious about flight, aircraft design, and autonomous aerial vehicles, then give them room to turn that curiosity into practical work. Members move from requirements and analysis through manufacturing, controls, perception, integration, ground testing, and flight testing.</p>
+          <p>SUAS is one major program within Rose Aerial Systems, alongside Design Build Fly. Competition gives the team a demanding shared mission, but our work is broader than one event: members also pursue project research and development, build classroom and practical skills, and document what they learn for the teams that follow.</p>
           <ul class="check-list">
             <li>Student Unmanned Aerial Systems competition projects</li>
             <li>Design Build Fly aircraft development</li>
             <li>Member-led aircraft and autonomy projects</li>
-            <li>Shop work, ground testing, and flight operations</li>
+            <li>Ground integration, field testing, and flight operations</li>
           </ul>
         </div>
       </div>
@@ -62,11 +58,27 @@
     <section class="section dark" aria-labelledby="subteams-title">
       <div class="container">
         <div class="section-heading"><span class="kicker">What members work on</span><h2 id="subteams-title">One aircraft, many kinds of work</h2><p>Members can focus on one area or move between them as they learn. A flight test usually needs people from all four.</p></div>
-        <div class="grid four">
-          <article class="card"><h3>Aircraft Structures</h3><p>Airframe design, CAD, manufacturing, propulsion installation, and mechanical repairs.</p></article>
-          <article class="card"><h3>Electrical, Avionics, and Controls</h3><p>Power distribution, flight controls, navigation sensors, pilot links, telemetry, and the ground station.</p></article>
-          <article class="card"><h3>Autonomy and Perception</h3><p>Mission software, simulation, camera integration, detection, mapping, and target location.</p></article>
-          <article class="card"><h3>Payload</h3><p>Payload hardware, release logic, procedures, and delivery testing.</p></article>
+        <div class="grid four subteam-grid">
+          <article class="subteam-card" tabindex="0">
+            <h3>Aircraft Structures</h3>
+            <p>Airframe design, CAD, manufacturing, propulsion installation, and mechanical repairs.</p>
+            <div class="subteam-details"><ul class="reveal-list"><li>Wing, fuselage, and tail design</li><li>Composite parts, lift booms, mounts, and landing gear</li><li>Fit checks, structural changes, and field repairs</li></ul></div>
+          </article>
+          <article class="subteam-card" tabindex="0">
+            <h3>Electrical, Avionics, and Controls</h3>
+            <p>Power distribution, flight controls, navigation sensors, pilot links, telemetry, and the ground station.</p>
+            <div class="subteam-details"><ul class="reveal-list"><li>Power distribution and aircraft wiring</li><li>Pixhawk setup, sensors, and control tuning</li><li>Pilot links, telemetry, and ground-station operation</li></ul></div>
+          </article>
+          <article class="subteam-card" tabindex="0">
+            <h3>Autonomy and Perception</h3>
+            <p>Mission software, simulation, camera integration, detection, mapping, and target location.</p>
+            <div class="subteam-details"><ul class="reveal-list"><li>Python mission state and PyMAVLink</li><li>SITL and Gazebo verification</li><li>Camera, OpenCV, mapping, and target-location pipeline</li></ul></div>
+          </article>
+          <article class="subteam-card" tabindex="0">
+            <h3>Payload</h3>
+            <p>Payload hardware, release logic, procedures, and delivery testing.</p>
+            <div class="subteam-details"><ul class="reveal-list"><li>Payload bay and release hardware</li><li>Command logic and drop procedures</li><li>Separate risk-reduction tests before aircraft integration</li></ul></div>
+          </article>
         </div>
       </div>
     </section>
@@ -78,10 +90,7 @@
           <h2 id="season-title">Designing, building, and testing MeadowHawk</h2>
           <p>During the 2025-2026 season, the team designed and built MeadowHawk, a five-motor VTOL fixed-wing aircraft. On July 21, MeadowHawk flew six autonomous waypoint laps in VTOL mode for more than one mile, completing the competition proof-of-flight requirement. Fixed-wing transition and the full search-and-delivery mission remained separate integration work.</p>
         </div>
-        <figure>
-          <div class="media-frame full-image"><img src="assets/img/meadowhawk-workshop-integration.jpg" alt="Rose Aerial Systems member working with a MeadowHawk airframe component in the workshop" width="1200" height="1600" loading="lazy"></div>
-          <figcaption class="caption">Working on MeadowHawk's airframe in the team workshop.</figcaption>
-        </figure>
+        <div class="media-frame full-image"><img src="assets/img/meadowhawk-workshop-integration.jpg" alt="Rose Aerial Systems member fitting a MeadowHawk airframe component" width="1200" height="1600" loading="lazy"></div>
       </div>
     </section>
 

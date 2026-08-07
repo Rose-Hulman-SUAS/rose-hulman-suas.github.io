@@ -57,6 +57,7 @@
 
   const searchEntries = [
     { title: "Home", url: "index.html", text: "Rose Aerial Systems MeadowHawk student research competition unmanned aircraft autonomous VTOL QuadPlane" },
+    { title: "Meet MeadowHawk", url: "index.html#meadowhawk", text: "red meadowhawk dragonfly Midwest Rose-Hulman name five-motor QuadPlane July 21 proof flight" },
     { title: "Competition Mission", url: "index.html#mission", text: "VTOL launch autonomous navigation mapping search detection payload delivery return landing" },
     { title: "Vehicle Overview", url: "index.html#aircraft", text: "QuadPlane pusher H-shaped lift structure X-frame control allocation 19 lb design condition Pixhawk Jetson three 6S batteries" },
     { title: "Engineering Overview", url: "engineering.html", text: "airframe propulsion power flight control mission computing communications payload safety" },

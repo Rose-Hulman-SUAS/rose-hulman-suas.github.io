@@ -32,18 +32,15 @@
   </header>
 
   <main id="main-content">
-    <section class="page-hero">
-      <div class="container page-hero-layout">
-        <div class="page-hero-copy">
+    <section class="page-hero engineering-hero">
+      <img class="engineering-hero-image" src="assets/img/meadowhawk-workshop-overview.jpg" alt="" width="1600" height="1200" fetchpriority="high">
+      <div class="container engineering-hero-content">
+        <div class="engineering-hero-copy">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Engineering</span></nav>
           <p class="eyebrow">Vehicle design documentation</p>
           <h1>Engineering MeadowHawk</h1>
           <p>MeadowHawk has to do more than fly. Its structure, power system, flight controller, mission computer, camera, payload bay, and ground station all have to work together and still leave the safety pilot a reliable way to take over.</p>
         </div>
-        <figure class="page-hero-media">
-          <img src="assets/img/meadowhawk-workshop-overview.jpg" alt="MeadowHawk assembled across workshop tables during systems integration" width="1600" height="1200" fetchpriority="high">
-          <figcaption>MeadowHawk during workshop systems integration.</figcaption>
-        </figure>
       </div>
     </section>
 
@@ -60,30 +57,30 @@
       </div>
     </nav>
 
-    <section class="section" id="overview" aria-labelledby="overview-title">
-      <div class="container split">
-        <div>
+    <section class="section engineering-overview" id="overview" aria-labelledby="overview-title">
+      <div class="container quadplane-layout">
+        <div class="quadplane-copy">
           <span class="kicker">Architecture</span>
           <h2 id="overview-title">Why we chose a QuadPlane</h2>
           <p>A conventional fixed-wing aircraft needs room to launch and recover. A multirotor can take off almost anywhere, but it uses more energy in forward flight. MeadowHawk combines the two: four lift motors handle vertical flight, and a rear pusher is intended to carry the aircraft through fixed-wing cruise.</p>
           <p>The Pixhawk 6X handles stabilization and navigation. A Jetson Orin NX runs the higher-level Python mission and vision software. The aircraft also carries separate pilot and ground-station links, a downward-facing camera, and a payload bay near the center of gravity.</p>
-          <ul class="check-list">
-            <li>Vertical launch and recovery without a runway</li>
-            <li>Fixed-wing cruise for longer missions</li>
-            <li>Waypoint navigation and search planning</li>
-            <li>Independent manual takeover and telemetry</li>
-            <li>Camera-based target work and relief-payload delivery</li>
-          </ul>
         </div>
-        <figure>
-          <div class="media-frame"><img src="assets/img/meadowhawk-cad.jpg" alt="CAD rendering of the MeadowHawk QuadPlane configuration" width="1350" height="837"></div>
+        <figure class="quadplane-figure">
+          <img src="assets/img/meadowhawk-cad.jpg" alt="CAD rendering of the MeadowHawk QuadPlane configuration" width="1350" height="837">
           <figcaption class="caption">A design-stage CAD rendering of MeadowHawk. Hardware configuration has continued to evolve through flight testing.</figcaption>
         </figure>
+        <ul class="check-list quadplane-points">
+          <li>Vertical launch and recovery without a runway</li>
+          <li>Fixed-wing cruise for longer missions</li>
+          <li>Waypoint navigation and search planning</li>
+          <li>Independent manual takeover and telemetry</li>
+          <li>Camera-based target work and relief-payload delivery</li>
+        </ul>
       </div>
     </section>
 
     <section class="section dark" id="airframe" aria-labelledby="airframe-title">
-      <div class="container split">
+      <div class="container split engineering-airframe-layout">
         <div>
           <span class="kicker">Airframe and structure</span>
           <h2 id="airframe-title">Wing, fuselage, and lift structure</h2>
@@ -95,9 +92,8 @@
             <li>The aircraft separates into transportable assemblies for field setup.</li>
           </ul>
         </div>
-        <figure>
-          <div class="media-frame tall"><img src="assets/img/meadowhawk-july-vtol-test.jpg" alt="MeadowHawk resting on grass during July 2026 VTOL testing, showing the wing and four lift motors" width="788" height="1400" loading="lazy"></div>
-          <figcaption class="caption">MeadowHawk during July 2026 VTOL testing. The physical H-shaped lift structure is visible around the fuselage.</figcaption>
+        <figure class="airframe-figure">
+          <div class="media-frame airframe-crop"><img src="assets/img/meadowhawk-july-vtol-test.jpg" alt="MeadowHawk resting on grass during July 2026 VTOL testing, showing the wing and four lift motors" width="788" height="1400" loading="lazy"></div>
         </figure>
       </div>
     </section>
