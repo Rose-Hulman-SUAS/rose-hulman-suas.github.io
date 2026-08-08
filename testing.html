@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="How Rose Aerial Systems tested MeadowHawk, what went wrong, and what the team changed before its accepted proof flight.">
+  <meta name="description" content="How Rose Aerial Systems tested MeadowHawk, what went wrong, and what changed during the aircraft's flight-test program.">
   <meta name="theme-color" content="#080808">
   <title>Testing | Rose Aerial Systems</title>
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/config.js" defer></script>
-  <script src="assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260808d">
+  <script src="assets/js/config.js?v=20260808d" defer></script>
+  <script src="assets/js/site.js?v=20260808d" defer></script>
 </head>
 <body data-page="testing">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -42,8 +42,8 @@
             <h2>Analytical design and major aircraft revisions</h2>
             <p>We began with estimates for wing loading, stall speed, drag, cruise thrust, hover power, and mission energy. CAD and eCalc helped us compare motors, propellers, batteries, mass, and geometry. The aircraft changed several times as real components replaced early estimates.</p>
             <div class="timeline-gallery early-design-gallery">
-              <div class="media-frame"><img src="assets/img/meadowhawk-cad.jpg" alt="Early MeadowHawk CAD configuration" width="1350" height="837" loading="lazy"></div>
-              <div class="media-frame"><img src="assets/img/meadowhawk-early-airframe.jpg" alt="Early MeadowHawk airframe and rear-motor assembly during component fit checks" width="1100" height="1466" loading="lazy"></div>
+              <figure><div class="media-frame"><img src="assets/img/meadowhawk-cad.jpg" alt="Early MeadowHawk CAD configuration" width="1350" height="837" loading="lazy"></div><figcaption class="caption">Design-stage CAD used to compare geometry and subsystem placement.</figcaption></figure>
+              <figure><div class="media-frame"><img src="assets/img/meadowhawk-early-airframe.jpg" alt="Early MeadowHawk airframe and rear-motor assembly during component fit checks" width="1100" height="1466" loading="lazy"></div><figcaption class="caption">An early airframe assembly during component fit checks.</figcaption></figure>
             </div>
           </article>
 
@@ -51,8 +51,12 @@
             <time datetime="2026-01">Parallel subsystem development</time>
             <h2>Multirotor Experiment Platform</h2>
             <p>Before MeadowHawk was ready, MEP carried the Pixhawk, Jetson, camera, communications hardware, and payload equipment. We used it for waypoint work, camera integration, competition-altitude image collection, and payload releases. These flights reduced integration risk, but they did not prove that the same systems were ready on MeadowHawk.</p>
-            <div class="timeline-media media-frame"><img src="assets/img/mep-flight.jpg" alt="Multirotor Experiment Platform during a field test" width="1200" height="677" loading="lazy"></div>
-            <div class="timeline-media media-frame"><img src="assets/img/mep-test-team.jpg" alt="Rose Aerial Systems members with MEP after a field test flight" width="1800" height="1350" loading="lazy"></div>
+            <div class="timeline-gallery field-test-gallery">
+              <figure><div class="media-frame"><img src="assets/img/mep-flight.jpg" alt="Multirotor Experiment Platform during a field test" width="1200" height="677" loading="lazy"></div><figcaption class="caption">MEP operating during a night field test.</figcaption></figure>
+              <figure><div class="media-frame"><img src="assets/img/mep-test-team.jpg" alt="Rose Aerial Systems members with MEP after a field test flight" width="1800" height="1350" loading="lazy"></div><figcaption class="caption">The field crew with MEP after a test.</figcaption></figure>
+              <figure><div class="media-frame"><img src="assets/img/mep-hover.jpg" alt="Multirotor Experiment Platform hovering during a flight test" width="1200" height="1600" loading="lazy"></div><figcaption class="caption">MEP in hover during a subsystem flight test.</figcaption></figure>
+              <figure><div class="media-frame"><img src="assets/img/mep-field-test.jpg" alt="Multirotor Experiment Platform and laptop prepared for a field integration test" width="1400" height="1050" loading="lazy"></div><figcaption class="caption">Aircraft and ground equipment prepared for a field integration check.</figcaption></figure>
+            </div>
             <figure class="video-card">
               <div class="video-embed">
                 <iframe src="https://www.youtube-nocookie.com/embed/kuHBPhvw5UI" title="MEP2 autonomous takeoff and payload-drop flight test" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -65,7 +69,10 @@
             <time datetime="2026-06">Software verification</time>
             <h2>Software-in-the-loop and ground-station testing</h2>
             <p>We connected ArduPilot SITL, Gazebo, Mission Planner, and our mission scripts to rehearse connections, arming states, mode changes, waypoint handling, and mission logic. That let us find software problems before enabling the same behavior on a real aircraft.</p>
-            <div class="timeline-media media-frame tall"><img src="assets/img/sitl-test.jpg" alt="Student operating a Gazebo and Mission Planner SITL test environment" width="900" height="1585" loading="lazy"></div>
+            <div class="timeline-gallery software-test-gallery">
+              <figure><div class="media-frame"><img src="assets/img/sitl-test.jpg" alt="Student operating a Gazebo and Mission Planner SITL test environment" width="900" height="1585" loading="lazy"></div><figcaption class="caption">SITL and Mission Planner used together during a workshop test.</figcaption></figure>
+              <figure><div class="media-frame"><img src="assets/img/sitl-gazebo.jpg" alt="Gazebo simulation viewport with three simulated aircraft" width="1400" height="1400" loading="lazy"></div><figcaption class="caption">Gazebo simulation used to exercise mission and telemetry interfaces before flight.</figcaption></figure>
+            </div>
           </article>
 
           <article class="timeline-entry">
@@ -73,7 +80,7 @@
             <h2>A yaw problem grounded MeadowHawk</h2>
             <p>An early VTOL flight developed a steady clockwise yaw. The counter-clockwise motor pair ran much hotter, and the front-left motor was damaged. We grounded the aircraft and checked the logs, motor mapping, rotation directions, ESC setup, controller allocation, wiring, mounts, and structural stiffness. The available record points to several possible contributors rather than one proven root cause.</p>
             <p>The carbon lift structure remained H-shaped, but we changed ArduPilot from an H-frame allocation to an X-frame allocation and rechecked each motor's physical location and direction. We also installed a matched set of DJI lift motors, reinforced the arm and motor-pod structure, and repeated no-prop, restrained, hover, and temperature checks.</p>
-            <div class="callout"><h3>Follow-up checks</h3><p>In follow-up records, restrained tests, short hovers, and assisted-mode flights no longer showed the persistent yaw or severe pairwise heating. The exact day-by-day sequence of those checks is still being confirmed.</p></div>
+            <div class="callout"><h3>Follow-up checks</h3><p>Follow-up records show that restrained tests, short hovers, and assisted-mode flights no longer had the persistent yaw or severe pairwise heating. The exact dates and sequence of those checks are still being confirmed.</p></div>
           </article>
 
           <article class="timeline-entry" id="proof-flight">
@@ -87,7 +94,12 @@
               <li>No manual takeover needed to finish the mission</li>
             </ul>
             <div class="callout"><h3>What this flight did not prove</h3><p>The proof flight did not include fixed-wing transition, mapping, live target detection, geolocation, payload delivery on MeadowHawk, or the complete competition mission.</p></div>
-            <div class="timeline-media media-frame proof-flight-still"><img src="assets/img/meadowhawk-vtol-flight.jpg" alt="MeadowHawk airborne above a tree line during VTOL flight testing" width="800" height="670" loading="lazy"></div>
+            <div class="timeline-gallery proof-flight-gallery">
+              <figure><div class="media-frame"><img src="assets/img/meadowhawk-vtol-flight.jpg" alt="MeadowHawk airborne above a tree line during VTOL flight testing" width="800" height="670" loading="lazy"></div><figcaption class="caption">MeadowHawk airborne during VTOL testing.</figcaption></figure>
+              <figure><div class="media-frame"><img src="assets/img/meadowhawk-night-test-wide.jpg" alt="MeadowHawk on a grass test field at night" width="1600" height="1200" loading="lazy"></div><figcaption class="caption">Night ground checks during the July test period.</figcaption></figure>
+              <figure><div class="media-frame"><img src="assets/img/meadowhawk-night-test-portrait.jpg" alt="MeadowHawk on a grass test field at night viewed from behind" width="1200" height="1600" loading="lazy"></div><figcaption class="caption">A second view of the aircraft during night field work.</figcaption></figure>
+              <figure><div class="media-frame"><img src="assets/img/meadowhawk-calibration.jpg" alt="MeadowHawk beside a laptop during a ground calibration and telemetry check" width="1600" height="1200" loading="lazy"></div><figcaption class="caption">Calibration and telemetry checks with the aircraft on the ground.</figcaption></figure>
+            </div>
             <figure class="video-card">
               <div class="video-embed">
                 <iframe src="https://www.youtube-nocookie.com/embed/hljpZ0iLWb4" title="Accepted MeadowHawk proof flight from July 21, 2026" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -124,7 +136,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div><div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="engineering.html">Engineering</a><a href="team.html">About</a></div><div class="footer-links"><h2>Contact</h2><a href="mailto:rhitsuas@gmail.com" data-email-link>rhitsuas@gmail.com</a><a href="#" data-config-href="youtubeUrl" data-optional-link hidden>YouTube</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div></div><div class="footer-bottom">Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div></div>
+    <div class="container"><div class="footer-grid"><div class="footer-brand"><img src="assets/img/logo-mark.png" alt="" width="74" height="70"><div><strong>Rose Aerial Systems</strong><span>Rose-Hulman Institute of Technology</span></div></div><div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="engineering.html">Engineering</a><a href="team.html">About</a></div><div class="footer-links"><h2>Contact</h2><a href="mailto:rhitsuas@gmail.com" data-email-link>rhitsuas@gmail.com</a><a href="#" data-config-href="youtubeUrl" data-optional-link hidden>YouTube</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div></div><div class="footer-bottom"><span>Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</span><span>&copy; <span data-config="copyrightYear">2026</span> Rose Aerial Systems. All rights reserved.</span></div></div>
   </footer>
 
   <dialog class="search-dialog" data-search-dialog aria-labelledby="search-title"><div class="search-header"><label id="search-title" for="site-search"><strong>Search this website</strong></label><input id="site-search" type="search" placeholder="Try payload, SITL, or Pixhawk" data-search-input><button class="search-close" type="button" data-close-search aria-label="Close search">&times;</button></div><ul class="search-results" data-search-results></ul></dialog>

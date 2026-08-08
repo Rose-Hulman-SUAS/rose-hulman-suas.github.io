@@ -9,6 +9,7 @@ window.RAS_CONFIG = {
   teamEmail: "rhitsuas@gmail.com",
   designWeight: "Approximately 19 lb",
   lastUpdated: "August 2026",
+  copyrightYear: "2026",
   sponsorshipSubject: "Rose Aerial Systems sponsorship inquiry",
 
   /* Optional links. Leave blank to hide the corresponding button. */

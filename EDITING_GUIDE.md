@@ -27,6 +27,7 @@ Update:
 - `teamEmail`
 - `designWeight`
 - `lastUpdated`
+- `copyrightYear`
 - `sponsorshipSubject`
 - `proofFlightUrl`
 - `payloadDropUrl`
@@ -65,29 +66,22 @@ First, place an approved portrait in `assets/img/`. Use a short lowercase filena
 Open `team.html` and find:
 
 ```html
-<section class="section" aria-labelledby="roster-title" hidden>
+<div class="grid three team-member-grid">
 ```
 
-Remove the word `hidden` from that line when you add the first approved profile. Then find:
+Replace one placeholder card with this approved profile block. Copy it again when you add another member:
 
 ```html
-<div class="grid three profile-grid">
-```
-
-Copy the example profile block immediately below it, paste the copy inside the same grid, and remove the surrounding comment markers from the copy:
-
-```html
-<article class="card profile-card">
-  <img src="assets/img/first-last.jpg" alt="Portrait of First Last" width="800" height="1000" loading="lazy">
-  <div class="profile-copy">
-    <h3>First Last</h3>
-    <p class="profile-role">Team role</p>
-    <p>Two or three sentences about the member's work, experience, or interests.</p>
+<article class="team-member-card" tabindex="0">
+  <div class="member-portrait">
+    <img src="assets/img/first-last.jpg" alt="Portrait of First Last" width="800" height="1000" loading="lazy">
+    <div class="member-bio"><p>Two or three approved sentences about the member's work and interests.</p></div>
   </div>
+  <div class="member-caption"><h3>First Last</h3><p>Team role</p></div>
 </article>
 ```
 
-Update the image path, alternative text, name, role, and short bio. Confirm that the member has approved the photo and biography before publishing them.
+Update the image path, alternative text, name, role, and short bio. The biography appears when the card is hovered or focused; it is always visible on touch screens. Confirm that the member has approved the photo and biography before publishing them.
 
 ## 4. Add sponsor logos
 
@@ -109,9 +103,9 @@ To add another sponsorship email button, use:
 ```html
 <a class="button dark"
    data-email-link
-   data-email-label="Sponsor the Team by Emailing Us"
+   data-email-label="Email us about sponsorship"
    data-email-subject="sponsorshipSubject">
-  Sponsor the Team by Emailing Us
+  Email us about sponsorship
 </a>
 ```
 
@@ -196,10 +190,10 @@ The search index is a small list inside `assets/js/site.js`. Find:
 const searchEntries = [
 ```
 
-Add an entry when you create a major new section:
+Add an entry when you create a major new section. The `text` value appears in the search results, so write it as a short sentence rather than a list of keywords:
 
 ```js
-{ title: "New Section", url: "testing.html#new-section", text: "keywords and short description" }
+{ title: "New Section", url: "testing.html#new-section", text: "A short sentence explaining what visitors will find in this section." }
 ```
 
 ## 9. Browser-only editing on GitHub

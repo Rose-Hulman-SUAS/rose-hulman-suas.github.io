@@ -55,24 +55,64 @@
     });
   }
 
+  document.querySelectorAll("[data-tabs]").forEach((tablist) => {
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    const panels = tabs
+      .map((tab) => document.getElementById(tab.getAttribute("aria-controls")))
+      .filter(Boolean);
+
+    if (!tabs.length || tabs.length !== panels.length) return;
+
+    const selectTab = (selectedTab, moveFocus = false) => {
+      tabs.forEach((tab) => {
+        const selected = tab === selectedTab;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        const panel = document.getElementById(tab.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !selected;
+      });
+      if (moveFocus) selectedTab.focus();
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectTab(tab));
+      tab.addEventListener("keydown", (event) => {
+        let nextIndex = index;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % tabs.length;
+        else if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === "Home") nextIndex = 0;
+        else if (event.key === "End") nextIndex = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectTab(tabs[nextIndex], true);
+      });
+    });
+
+    const initialTab = tabs.find((tab) => tab.getAttribute("aria-selected") === "true") || tabs[0];
+    selectTab(initialTab);
+  });
+
   const searchEntries = [
-    { title: "Home", url: "index.html", text: "Rose Aerial Systems MeadowHawk student research competition unmanned aircraft autonomous VTOL QuadPlane" },
-    { title: "Meet MeadowHawk", url: "index.html#meadowhawk", text: "red meadowhawk dragonfly Midwest Rose-Hulman name five-motor QuadPlane July 21 proof flight" },
-    { title: "Competition Mission", url: "index.html#mission", text: "VTOL launch autonomous navigation mapping search detection payload delivery return landing" },
-    { title: "Vehicle Overview", url: "index.html#aircraft", text: "QuadPlane pusher H-shaped lift structure X-frame control allocation 19 lb design condition Pixhawk Jetson three 6S batteries" },
-    { title: "Engineering Overview", url: "engineering.html", text: "airframe propulsion power flight control mission computing communications payload safety" },
-    { title: "Airframe and Structure", url: "engineering.html#airframe", text: "fixed wing MH32 H-shaped lift structure X-frame control allocation Y-tail booms landing gear" },
-    { title: "Propulsion and Power", url: "engineering.html#propulsion", text: "lift motors cruise motor batteries PDB ESC power distribution" },
-    { title: "Flight Control and Navigation", url: "engineering.html#flight-control", text: "Pixhawk 6X ArduPilot aircraft control modes navigation geofence" },
-    { title: "Mission Computing and Perception", url: "engineering.html#mission-computing", text: "Jetson Orin NX Python PyMAVLink camera pipeline OpenCV target detection" },
-    { title: "Communications and Ground Station", url: "engineering.html#communications", text: "safety pilot ELRS telemetry Mission Planner ground control station" },
-    { title: "Payload System", url: "engineering.html#payload", text: "bottle beacon payload delivery mechanical release test" },
-    { title: "Testing History", url: "testing.html", text: "MEP SITL flight test yaw incident X-frame proof flight one mile" },
-    { title: "MEP Payload-Drop Test", url: "testing.html#mep", text: "Multirotor Experiment Platform autonomous takeoff commanded payload release video" },
-    { title: "Proof of Flight", url: "testing.html#proof-flight", text: "July 21 one-mile autonomous VTOL waypoint proof flight approved video" },
-    { title: "About Rose Aerial Systems", url: "team.html", text: "student organization competition team aircraft projects members subteams Rose-Hulman" },
-    { title: "Join and Follow", url: "team.html#contact", text: "Discord YouTube Instagram LinkedIn email membership contact" },
-    { title: "Sponsors", url: "team.html#sponsors", text: "partners sponsors support Rose-Hulman" }
+    { title: "Home", url: "index.html", text: "An overview of Rose Aerial Systems and the MeadowHawk student VTOL aircraft." },
+    { title: "Meet MeadowHawk", url: "index.html#meadowhawk", text: "How MeadowHawk got its name and what the July 21 proof flight demonstrated." },
+    { title: "Competition Mission", url: "index.html#mission", text: "The planned mission covers VTOL launch, autonomous navigation, mapping, target detection, payload delivery, and landing." },
+    { title: "Vehicle Overview", url: "index.html#aircraft", text: "MeadowHawk's airframe, 19 lb TDR design condition, Pixhawk, Jetson, batteries, and propulsion layout." },
+    { title: "Engineering Overview", url: "engineering.html", text: "How the airframe, power system, flight control, mission computing, communications, payload, and safety work fit together." },
+    { title: "Aircraft Subsystems", url: "engineering.html#subsystems", text: "A configuration-aware guide to MeadowHawk's airframe, lift system, power, flight controls, mission computer, links, and payload." },
+    { title: "Airframe and Structure", url: "engineering.html#airframe", text: "The wing, fuselage, Y-tail, landing gear, and physical H-shaped lift structure." },
+    { title: "Propulsion and Power", url: "engineering.html#propulsion", text: "Lift and cruise motors, batteries, ESCs, and high-current power distribution." },
+    { title: "Flight Control and Navigation", url: "engineering.html#flight-control", text: "Pixhawk and ArduPilot flight modes, navigation, geofence settings, and recovery behavior." },
+    { title: "Mission Computing and Perception", url: "engineering.html#mission-computing", text: "How Python, PyMAVLink, the Jetson, and the camera support mission logic and target detection." },
+    { title: "Aircraft Communications", url: "engineering.html#communications", text: "Separate safety-pilot and telemetry links keep manual control independent from mission supervision." },
+    { title: "Ground Control Station", url: "engineering.html#gcs", text: "The portable field case brings together Mission Planner, telemetry, video, and log review for the ground-station operator." },
+    { title: "Payload System", url: "engineering.html#payload", text: "Payload retention, independent release channels, MEP testing, and pending MeadowHawk delivery work." },
+    { title: "Testing History", url: "testing.html", text: "A record of simulation, bench tests, MEP flights, the yaw investigation, and MeadowHawk's proof flight." },
+    { title: "MEP Payload-Drop Test", url: "testing.html#mep", text: "The Multirotor Experiment Platform payload-drop test, including autonomous takeoff and commanded release." },
+    { title: "Proof of Flight", url: "testing.html#proof-flight", text: "The accepted July 21 autonomous VTOL waypoint flight covering more than one mile." },
+    { title: "About Rose Aerial Systems", url: "team.html", text: "Who Rose Aerial Systems is, the work members do, and how the team approaches aircraft projects." },
+    { title: "Team Members", url: "team.html#team-members", text: "A profile-card layout for approved member portraits, roles, and short biographies." },
+    { title: "Join and Follow", url: "team.html#contact", text: "Team discussion on Discord and public updates on YouTube, Instagram, and LinkedIn." },
+    { title: "Sponsors", url: "team.html#sponsors", text: "How companies, alumni, and other supporters can help fund aircraft materials, testing, travel, and competition costs." }
   ];
 
   const dialog = document.querySelector("[data-search-dialog]");

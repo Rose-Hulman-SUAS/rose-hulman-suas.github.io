@@ -8,9 +8,9 @@
   <title>Engineering | Rose Aerial Systems</title>
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/config.js" defer></script>
-  <script src="assets/js/site.js" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260808d">
+  <script src="assets/js/config.js?v=20260808d" defer></script>
+  <script src="assets/js/site.js?v=20260808d" defer></script>
 </head>
 <body data-page="engineering">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -33,13 +33,13 @@
 
   <main id="main-content">
     <section class="page-hero engineering-hero">
-      <img class="engineering-hero-image" src="assets/img/meadowhawk-workshop-overview.jpg" alt="" width="1600" height="1200" fetchpriority="high">
+      <img class="engineering-hero-image" src="assets/img/meadowhawk-workshop-hero.jpg" alt="" width="1920" height="1440" fetchpriority="high">
       <div class="container engineering-hero-content">
         <div class="engineering-hero-copy">
           <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Engineering</span></nav>
           <p class="eyebrow">Vehicle design documentation</p>
           <h1>Engineering MeadowHawk</h1>
-          <p>MeadowHawk has to do more than fly. Its structure, power system, flight controller, mission computer, camera, payload bay, and ground station all have to work together and still leave the safety pilot a reliable way to take over.</p>
+          <p>Flying MeadowHawk safely depends on more than the airframe. The power system, Pixhawk, Jetson, camera, payload, and ground-station links must work together while preserving the pilot's independent takeover link.</p>
         </div>
       </div>
     </section>
@@ -47,11 +47,13 @@
     <nav class="subnav" aria-label="Engineering sections">
       <div class="container">
         <a href="#overview">Overview</a>
+        <a href="#subsystems">Subsystems</a>
         <a href="#airframe">Airframe</a>
         <a href="#propulsion">Propulsion and power</a>
         <a href="#flight-control">Flight control</a>
         <a href="#mission-computing">Mission computing</a>
         <a href="#communications">Communications</a>
+        <a href="#gcs">Ground station</a>
         <a href="#payload">Payload</a>
         <a href="#safety">Safety</a>
       </div>
@@ -67,7 +69,7 @@
         </div>
         <figure class="quadplane-figure">
           <img src="assets/img/meadowhawk-cad.jpg" alt="CAD rendering of the MeadowHawk QuadPlane configuration" width="1350" height="837">
-          <figcaption class="caption">A design-stage CAD rendering of MeadowHawk. Hardware configuration has continued to evolve through flight testing.</figcaption>
+          <figcaption class="caption">This CAD view shows a design-stage configuration; it is not a current as-built record.</figcaption>
         </figure>
         <ul class="check-list quadplane-points">
           <li>Vertical launch and recovery without a runway</li>
@@ -76,6 +78,140 @@
           <li>Independent manual takeover and telemetry</li>
           <li>Camera-based target work and relief-payload delivery</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section subsystem-section" id="subsystems" aria-labelledby="subsystems-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Aircraft subsystem guide</span>
+          <h2 id="subsystems-title">One aircraft, seven connected systems</h2>
+          <p>Use the guide to see how each part of MeadowHawk supports the mission. Labels distinguish TDR design references, proof-flight hardware, and work that still needs a test before it can be called current.</p>
+        </div>
+
+        <div class="subsystem-explorer">
+          <div class="subsystem-tabs" role="tablist" aria-label="MeadowHawk aircraft subsystems" data-tabs>
+            <button class="subsystem-tab" type="button" role="tab" id="tab-airframe" aria-selected="true" aria-controls="panel-airframe" tabindex="0">Airframe and wing</button>
+            <button class="subsystem-tab" type="button" role="tab" id="tab-lift" aria-selected="false" aria-controls="panel-lift" tabindex="-1">Vertical lift</button>
+            <button class="subsystem-tab" type="button" role="tab" id="tab-power" aria-selected="false" aria-controls="panel-power" tabindex="-1">Power system</button>
+            <button class="subsystem-tab" type="button" role="tab" id="tab-flight" aria-selected="false" aria-controls="panel-flight" tabindex="-1">Flight control</button>
+            <button class="subsystem-tab" type="button" role="tab" id="tab-computing" aria-selected="false" aria-controls="panel-computing" tabindex="-1">Mission computer</button>
+            <button class="subsystem-tab" type="button" role="tab" id="tab-links" aria-selected="false" aria-controls="panel-links" tabindex="-1">Ground links</button>
+            <button class="subsystem-tab" type="button" role="tab" id="tab-payload" aria-selected="false" aria-controls="panel-payload" tabindex="-1">Payload</button>
+          </div>
+
+          <article class="subsystem-panel" id="panel-airframe" role="tabpanel" aria-labelledby="tab-airframe">
+            <div class="subsystem-panel-grid">
+              <div class="subsystem-panel-copy">
+                <p class="subsystem-status">TDR design reference &middot; current as-built survey pending</p>
+                <h3>Wing, fuselage, and cruise structure</h3>
+                <p>The fixed-wing airframe gives MeadowHawk the efficiency it needs after vertical flight. The fuselage keeps batteries, electronics, camera equipment, and the payload close to the centerline so that integration work does not turn into a trim problem.</p>
+                <dl class="system-facts">
+                  <div><dt>Design reference</dt><dd>An MH32 straight-taper wing and an inverted-Y tail appear in the Technical Design Report design record.</dd></div>
+                  <div><dt>Construction</dt><dd>Carbon-reinforced members, printed interfaces, and repairable assemblies support iterative field work.</dd></div>
+                  <div><dt>As-built check</dt><dd>A current dimensional survey has not been completed, so the CAD measurements remain design references.</dd></div>
+                </dl>
+              </div>
+              <figure class="subsystem-media"><img src="assets/img/meadowhawk-cad.jpg" alt="CAD rendering of MeadowHawk showing its wing, fuselage, tail, and rear pusher configuration" width="1350" height="837" loading="lazy"><figcaption>Design-stage CAD view; not a current as-built record.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="subsystem-panel" id="panel-lift" role="tabpanel" aria-labelledby="tab-lift" hidden>
+            <div class="subsystem-panel-grid">
+              <div class="subsystem-panel-copy">
+                <p class="subsystem-status proof">July 21 proof-flight configuration</p>
+                <h3>Physical H structure, X-frame control allocation</h3>
+                <p>MeadowHawk's carbon lift structure is physically H-shaped. The flight controller uses an X-frame allocation for the four motor positions, a distinction that matters when motor direction, output mapping, and pilot response are checked before a flight.</p>
+                <dl class="system-facts">
+                  <div><dt>Lift hardware</dt><dd>The July 21 proof flight used four DJI 4216 KV310 lift motors.</dd></div>
+                  <div><dt>Demonstrated scope</dt><dd>Autonomous VTOL waypoint laps, not fixed-wing transition or the full competition mission.</dd></div>
+                  <div><dt>Design evolution</dt><dd>The lift configuration changed after earlier motor-mapping and thermal investigation work.</dd></div>
+                </dl>
+              </div>
+              <figure class="subsystem-media"><img src="assets/img/meadowhawk-lift-structure.jpg" alt="MeadowHawk on the ground showing the lift-boom structure and vertical-flight motors" width="1152" height="2048" loading="lazy"><figcaption>MeadowHawk lift structure during the July 2026 test period.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="subsystem-panel" id="panel-power" role="tabpanel" aria-labelledby="tab-power" hidden>
+            <div class="subsystem-panel-grid">
+              <div class="subsystem-panel-copy">
+                <p class="subsystem-status proof">Proof-flight battery configuration</p>
+                <h3>Shared energy, separate power paths</h3>
+                <p>The lift and cruise systems share one energy source, but high-current motor branches and regulated avionics power have different jobs. Keeping those paths organized makes wiring inspection and fault isolation much more manageable.</p>
+                <dl class="system-facts">
+                  <div><dt>Battery baseline</dt><dd>Three 6S packs in parallel; the proof-flight parameter set was configured for 13,500 mAh.</dd></div>
+                  <div><dt>Distribution</dt><dd>A high-current board feeds the lift and cruise ESC branches while avionics use a separate regulated branch.</dd></div>
+                  <div><dt>Evidence limit</dt><dd>These records do not establish current endurance or the final competition power configuration.</dd></div>
+                </dl>
+              </div>
+              <figure class="subsystem-media"><img src="assets/img/meadowhawk-power-wiring.jpg" alt="MeadowHawk opened for a power-distribution and avionics wiring check" width="1200" height="1600" loading="lazy"><figcaption>Battery, distribution, and avionics wiring laid out during workshop integration.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="subsystem-panel" id="panel-flight" role="tabpanel" aria-labelledby="tab-flight" hidden>
+            <div class="subsystem-panel-grid">
+              <div class="subsystem-panel-copy">
+                <p class="subsystem-status proof">Flight-control configuration verified for proof flight</p>
+                <h3>Pixhawk keeps the flight loop independent</h3>
+                <p>The Pixhawk 6X runs ArduPilot QuadPlane firmware for stabilization, navigation, flight modes, and return behavior. Mission hardware can request higher-level actions, but it does not replace the flight controller or the safety pilot's direct takeover path.</p>
+                <dl class="system-facts">
+                  <div><dt>Flight-test practice</dt><dd>Simulation, bench checks, short flights, and log review come before a larger envelope expansion.</dd></div>
+                  <div><dt>Proof-flight result</dt><dd>July 21 demonstrated multirotor waypoint flight under the accepted proof-of-flight mission.</dd></div>
+                  <div><dt>Still separate</dt><dd>Transition, fixed-wing cruise, and the complete search-and-delivery mission need their own evidence.</dd></div>
+                </dl>
+              </div>
+              <figure class="subsystem-media"><img src="assets/img/meadowhawk-proof-flight.jpg" alt="MeadowHawk operating during a July 2026 proof-flight test" width="1152" height="968" loading="lazy"><figcaption>MeadowHawk during the July 2026 proof-flight period.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="subsystem-panel" id="panel-computing" role="tabpanel" aria-labelledby="tab-computing" hidden>
+            <div class="subsystem-panel-grid">
+              <div class="subsystem-panel-copy">
+                <p class="subsystem-status">Recorded-data software evidence &middot; live integration pending</p>
+                <h3>Jetson mission logic and camera pipeline</h3>
+                <p>The Jetson Orin NX runs the team's Python mission scripts and camera pipeline. Python and PyMAVLink move telemetry and higher-level requests between the companion computer and Pixhawk while the Pixhawk remains responsible for the flight-control loop.</p>
+                <dl class="system-facts">
+                  <div><dt>Mission software</dt><dd>Python scripts manage mission state, telemetry handling, and higher-level commands.</dd></div>
+                  <div><dt>Perception</dt><dd>Recorded-image tests have been used to exercise camera processing and target detection.</dd></div>
+                  <div><dt>What remains</dt><dd>Live MeadowHawk detection, geolocation accuracy, and end-to-end mapping require separate flight evidence.</dd></div>
+                </dl>
+              </div>
+              <figure class="subsystem-media diagram-media"><img src="assets/img/software-architecture.png" alt="Diagram showing the Pixhawk, Jetson Python mission software, camera pipeline, and payload commands" width="1200" height="1402" loading="lazy"><figcaption>Mission-computing architecture used to plan interfaces between flight control and higher-level software.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="subsystem-panel" id="panel-links" role="tabpanel" aria-labelledby="tab-links" hidden>
+            <div class="subsystem-panel-grid">
+              <div class="subsystem-panel-copy">
+                <p class="subsystem-status">Ground-operations architecture</p>
+                <h3>Separate roles for control and supervision</h3>
+                <p>The safety pilot, ground-station operator, and aircraft do not depend on one link for every task. Manual control remains separate from telemetry and mission supervision, which supports clearer crew roles during staged testing.</p>
+                <dl class="system-facts">
+                  <div><dt>Safety pilot</dt><dd>An independent manual-control path is kept available for takeover.</dd></div>
+                  <div><dt>Ground station</dt><dd>Mission Planner supports planning, telemetry monitoring, mode awareness, and post-flight log review.</dd></div>
+                  <div><dt>Public detail</dt><dd>The site describes roles and interfaces without publishing operational radio configuration.</dd></div>
+                </dl>
+              </div>
+              <figure class="subsystem-media"><img src="assets/img/gcs-console.jpg" alt="Portable Rose Aerial Systems ground-control station with mission and video displays" width="1800" height="668" loading="lazy"><figcaption>The portable ground station combines mission, telemetry, and video displays while manual pilot control remains independent.</figcaption></figure>
+            </div>
+          </article>
+
+          <article class="subsystem-panel" id="panel-payload" role="tabpanel" aria-labelledby="tab-payload" hidden>
+            <div class="subsystem-panel-grid">
+              <div class="subsystem-panel-copy">
+                <p class="subsystem-status">MEP evidence &middot; MeadowHawk integration remains pending</p>
+                <h3>Payload retention and commanded release</h3>
+                <p>The payload bay is designed to keep relief objects close to the center of gravity and release them independently. That hardware is developed through its own retention, release, and operating-procedure checks before it becomes part of an aircraft mission claim.</p>
+                <dl class="system-facts">
+                  <div><dt>Design intent</dt><dd>Two independently commanded payload positions near the center of gravity.</dd></div>
+                  <div><dt>Prior evidence</dt><dd>MEP flights demonstrated retention and commanded release as a risk-reduction step.</dd></div>
+                  <div><dt>What remains</dt><dd>MeadowHawk target-relative delivery and the complete detection-to-delivery sequence remain separate work.</dd></div>
+                </dl>
+              </div>
+              <figure class="subsystem-media"><img src="assets/img/mep-field-test.jpg" alt="Multirotor Experiment Platform at a field test used to evaluate payload integration" width="1400" height="1050" loading="lazy"><figcaption>MEP field testing reduced payload-integration risk; it was not a MeadowHawk delivery mission.</figcaption></figure>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -93,7 +229,8 @@
           </ul>
         </div>
         <figure class="airframe-figure">
-          <div class="media-frame airframe-crop"><img src="assets/img/meadowhawk-july-vtol-test.jpg" alt="MeadowHawk resting on grass during July 2026 VTOL testing, showing the wing and four lift motors" width="788" height="1400" loading="lazy"></div>
+          <div class="media-frame airframe-crop"><img src="assets/img/meadowhawk-workshop-build.jpg" alt="MeadowHawk undergoing airframe and lift-structure integration in the workshop" width="1200" height="1600" loading="lazy"></div>
+          <figcaption class="caption">MeadowHawk during workshop integration; exposed systems make the load paths and replaceable assemblies visible.</figcaption>
         </figure>
       </div>
     </section>
@@ -157,12 +294,18 @@
             <li>Python scripts coordinate mission states and higher-level commands.</li>
             <li>The camera pipeline prepares frames and runs object detection on the Jetson.</li>
             <li>Recorded-data tests detected tent and mannequin targets.</li>
-            <li>Live MeadowHawk detection and geolocation-error testing remained pending.</li>
+            <li>At TDR completion, live MeadowHawk detection and geolocation-error testing remained pending.</li>
           </ul>
-          <figure style="margin: 1.5rem 0 0;">
-            <div class="media-frame"><img src="assets/img/detection-demo.jpg" alt="Recorded-image object detection test showing a target identified in the Rose Aerial Systems workspace" width="1400" height="819" loading="lazy"></div>
-            <figcaption class="caption">MeadowHawk's perception system pairs an e-con Systems e-CAM25_CUONX camera with a Python-based detection pipeline for mannequin and tent targets in aerial imagery.</figcaption>
-          </figure>
+          <div class="evidence-pair">
+            <figure>
+              <div class="media-frame"><img src="assets/img/detection-demo.jpg" alt="Recorded-image object detection test showing a target identified in the Rose Aerial Systems workspace" width="1400" height="819" loading="lazy"></div>
+              <figcaption class="caption">Recorded-image Python detection test. This is software evidence, not a completed live MeadowHawk search mission.</figcaption>
+            </figure>
+            <figure>
+              <div class="media-frame"><img src="assets/img/mep-tent-camera.jpg" alt="Top-down camera image of a blue tent collected during a Multirotor Experiment Platform flight" width="1280" height="720" loading="lazy"></div>
+              <figcaption class="caption">A top-down frame collected by MEP. It represents the imagery used for pipeline work; it is not MeadowHawk flight evidence.</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -170,7 +313,7 @@
     <section class="section dark" id="communications" aria-labelledby="communications-title">
       <div class="container">
         <div class="section-heading">
-          <span class="kicker">Communications and ground station</span>
+          <span class="kicker">Aircraft communications</span>
           <h2 id="communications-title">Separate links for pilot control and mission supervision</h2>
           <p>The safety pilot and ground-station operator have different jobs, so MeadowHawk does not depend on one link for every function.</p>
         </div>
@@ -188,6 +331,34 @@
             <p>The ground-station operator uses Mission Planner to build missions, monitor position and flight state, and review logs after testing.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section gcs-section" id="gcs" aria-labelledby="gcs-title">
+      <div class="container">
+        <div class="section-heading">
+          <span class="kicker">Ground Control Station</span>
+          <h2 id="gcs-title">One field case for planning, telemetry, and video</h2>
+          <p>The portable ground station gives the operator one place to prepare a mission, follow aircraft state, watch the camera feed, and review logs. It supports the crew without replacing the safety pilot's independent control link.</p>
+        </div>
+        <div class="gcs-layout">
+          <figure class="gcs-primary">
+            <div class="media-frame"><img src="assets/img/gcs-console.jpg" alt="Portable Rose Aerial Systems ground-control station with mission and video displays" width="1800" height="668" loading="lazy"></div>
+            <figcaption class="caption">The transport case holds the operator displays and field interfaces in one deployable package.</figcaption>
+          </figure>
+          <div class="gcs-copy">
+            <dl class="system-facts">
+              <div><dt>Mission planning</dt><dd>Mission Planner is used to build routes, inspect aircraft state, and review flight logs.</dd></div>
+              <div><dt>Crew roles</dt><dd>The ground-station operator supervises the mission while the safety pilot retains a separate manual-control path.</dd></div>
+              <div><dt>Situational awareness</dt><dd>Telemetry and video are presented together so the crew can compare vehicle state with the camera view.</dd></div>
+              <div><dt>Field use</dt><dd>The displays and supporting equipment travel as a self-contained case for workshop and flight-line checks.</dd></div>
+            </dl>
+          </div>
+        </div>
+        <figure class="gcs-secondary">
+          <div class="media-frame"><img src="assets/img/gcs-integration.jpg" alt="Ground-control station connected beside MeadowHawk during a workshop integration check" width="1200" height="1600" loading="lazy"></div>
+          <figcaption class="caption">Ground-station and aircraft interfaces checked together in the workshop before field use.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -229,7 +400,7 @@
         <div class="footer-links"><h2>Explore</h2><a href="index.html">Home</a><a href="testing.html">Testing</a><a href="team.html">About</a></div>
         <div class="footer-links"><h2>Contact</h2><a href="mailto:rhitsuas@gmail.com" data-email-link>rhitsuas@gmail.com</a><a href="#" data-config-href="youtubeUrl" data-optional-link hidden>YouTube</a><a href="#" data-config-href="instagramUrl" data-optional-link hidden>Instagram</a><a href="#" data-config-href="linkedinUrl" data-optional-link hidden>LinkedIn</a></div>
       </div>
-      <div class="footer-bottom">Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</div>
+      <div class="footer-bottom"><span>Last updated <span data-config="lastUpdated">August 2026</span>. Student team website; not an official publication of Rose-Hulman Institute of Technology.</span><span>&copy; <span data-config="copyrightYear">2026</span> Rose Aerial Systems. All rights reserved.</span></div>
     </div>
   </footer>
 

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Team member portrait placeholder</title>
+  <desc id="desc">A neutral silhouette used until an approved team portrait is added.</desc>
+  <rect width="800" height="1000" fill="#e5e0d9"/>
+  <path fill="#b6aea5" d="M400 176c-90 0-163 73-163 163 0 67 40 125 98 150-130 34-226 152-226 293v118h582V782c0-141-96-259-226-293 58-25 98-83 98-150 0-90-73-163-163-163Z"/>
+  <path fill="#800000" d="M244 896h312v30H244z"/>
+  <text x="400" y="950" fill="#4f4b46" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="4" text-anchor="middle">PORTRAIT PENDING</text>
+</svg>
